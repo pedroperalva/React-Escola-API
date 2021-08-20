@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class QuemSomos extends Component {
 
     render() { 
-        return
+        return(
+            <div>
+                <h1>"Hi!"</h1>
+            </div>
+        )
     }
 }
  
