@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
-import './App.css';
-import Button from './components/Button'
-import Input from './components/Input'
-/* import {BrowserRouter as Router, Route, Switch } from "react-router-dom"; */
+import React, { Component } from "react";
+import "./App.css";
+import Home from "./pages/Home";
+import QuemSomos from "./pages/QuemSomos";
+import Cadastro from "./pages/Cadastro";
+import Login from "./pages/Login";
+import Contato from "./pages/Contato";
+import Tour from "./pages/Tour";
+import Sistema from "./pages/Sistema";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
-
-  render(){
+  render() {
     return (
       <div>
-      <Input style={{width:'200px'}}></Input>
-      <Button style={{width:'100px'}}>Enviar</Button>
-      {/* <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage}/>
-          <Route exact path="/drinks/busca" component={BuscaDrinks}/>
-          <Route exact path="/sobrenos" component={SobreNos}/>
-          <Route exact path="/contato" component={Contato}/>
-        </Switch>
-      </Router> */}
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/quemsomos" component={QuemSomos} />
+            <Route exact path="/cadastro" component={Cadastro} />
+            <Route exact path="/contato" component={Contato} />
+            <Route exact path="/tour" component={Tour} />
+            <Route exact path="/sistema" component={Sistema} />
+          </Switch>
+        </Router>
       </div>
     );
   }
-  
 }
 
 export default App;
