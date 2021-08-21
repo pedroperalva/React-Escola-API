@@ -5,26 +5,57 @@ import BgPhoto from '../img/bg-img.jpg';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import TextArea from '../components/TextArea';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class Contato extends Component {
 
-    render() {
-        return (
-            <DivPrincipal>
-                <DivMain>
-                    <Titulo>Contato</Titulo>
-                    <Imagem src={Photo} alt="imgcontato" />
-                    <Form>
-                        <Input>Nome:</Input>
-                        <Input>Email:</Input>
-                        <Input>Telefone:</Input>
-                        <TextArea>Mensagem:</TextArea>
-                        <Button style={{ width: '500px' }}>Enviar</Button>
-                    </Form>
-                </DivMain>
-            </DivPrincipal>
-        )
+    constructor(props){
+        super(props)
+
+        this.state={
+            show:true
+        }
     }
+    handleChange = (e)=>{
+        e.preventDefault()
+        this.setState({show:!this.state.show})
+    }
+    render() {
+
+            return (
+                <DivPrincipal>
+                    <DivHeader>
+                        <Header/>
+                    </DivHeader>
+                    <DivMain>
+                        {this.state.show? (<>
+                            <Titulo>Contato</Titulo>
+                            <Imagem src={Photo} alt="imgcontato"/>
+                            <Form onSubmit={this.handleChange}>
+                                <Input>Nome:</Input>
+                                <Input>Email:</Input>
+                                <Input>Telefone:</Input>
+                                <TextArea>Mensagem:</TextArea>
+                                <Button style={{ width: '400px' }}>Enviar</Button>
+                            </Form>
+                            </>
+                        ) : (
+                        <>
+                            <Titulo>Obrigado por entrar em contato conosco!<br/>
+                            Entraremos em contato até um prazo máximo de 48 horas!
+                            </Titulo>
+                        </>
+                        )}
+                        
+                    </DivMain>
+                    <DivFooter>
+                        <Footer/>
+                    </DivFooter>             
+                </DivPrincipal>
+            )
+    }
+
 }
 const DivPrincipal = styled.div`
     display: grid;
@@ -46,6 +77,12 @@ const DivPrincipal = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
 `
+const DivHeader= styled.header`
+    grid-area:header;
+`
+const DivFooter= styled.footer`
+    grid-area:footer;
+`
 const DivMain = styled.main`
     grid-area:content;
     display:grid;
@@ -59,6 +96,8 @@ const DivMain = styled.main`
 const Titulo = styled.h1`
     grid-area:titulo;
     text-align: center;
+    color: #001B44;
+    font-size: 50px;
 `
 const Imagem = styled.img`
     grid-area:main1;
