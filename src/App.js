@@ -1,17 +1,14 @@
+import React from 'react'
 import './App.css';
-import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-function App() {
-  return (
-    {/* <Router>
-      <Switch>
-        <Route exact path="/" component={HomePage}/>
-        <Route exact path="/drinks/busca" component={BuscaDrinks}/>
-        <Route exact path="/sobrenos" component={SobreNos}/>
-        <Route exact path="/contato" component={Contato}/>
-      </Switch>
-    </Router> */}
-  );
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+export default class App extends React.Component{
+  render(){
+    return(
+      <>
+      <Header />
+      <Footer />
+      </>
+    )
+  }
 }
-
-export default App;
