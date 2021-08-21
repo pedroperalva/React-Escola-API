@@ -29,7 +29,7 @@ const DivPrincipal = styled.div`
         "content"
         "footer ";
     grid-template-columns: 1fr;
-    grid-template-rows: 60px auto 40px;
+    grid-template-rows: 8rem auto 70px;
     grid-auto-rows: 150px;
 `
 const DivHeader = styled.header`
