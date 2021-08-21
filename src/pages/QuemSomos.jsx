@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 class QuemSomos extends Component {
 
-    render() { 
-        return(
+    render() {
+        return (
             <DivPrincipal>
-                <h1>"Hi!"</h1>
+                <DivHeader>
+                    <Header />
+                </DivHeader>
+                <DivFooter>
+                    <Footer />
+                </DivFooter>
             </DivPrincipal>
         )
     }
@@ -25,5 +32,10 @@ const DivPrincipal = styled.div`
     grid-template-rows: 60px auto 40px;
     grid-auto-rows: 150px;
 `
- 
+const DivHeader = styled.header`
+    grid-area:header;
+`
+const DivFooter = styled.footer`
+    grid-area:footer;
+`
 export default QuemSomos;
