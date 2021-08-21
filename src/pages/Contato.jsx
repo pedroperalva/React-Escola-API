@@ -68,7 +68,7 @@ const DivPrincipal = styled.div`
         "content"
         "footer ";
     grid-template-columns: 1fr;
-    grid-template-rows: 60px auto 40px;
+    grid-template-rows: 8rem auto 70px;
     grid-auto-rows: 150px;
     background-image: url(${BgPhoto});
     background-position: center;
@@ -106,6 +106,11 @@ const Imagem = styled.img`
 `
 const Form = styled.form`
     grid-area:main2;
+    border: 1px solid rgba(255, 255, 255, 0.082);
+    box-shadow: 10px 10px 10px 10px rgb(0 0 0 / 40%);
+    border-radius: 10px;
+    padding: 10px;
+    color: #001B44;
 `
 
 export default Contato;
