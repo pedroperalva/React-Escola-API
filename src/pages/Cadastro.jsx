@@ -25,5 +25,4 @@ const DivPrincipal = styled.div`
     grid-template-rows: 60px auto 40px;
     grid-auto-rows: 150px;
 `
- 
 export default Cadastro;
