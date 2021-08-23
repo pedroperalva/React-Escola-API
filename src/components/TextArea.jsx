@@ -2,21 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 class TextArea extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            value:""
-        };
-    }
-    handleValue= (e)=>{
-        console.log(e.target.value)
-        this.setState({value:e.target.value})
-    }
+    
     render() { 
         return (
             <Container> 
                 <Label>{this.props.children}</Label>
-                <InputArea style={this.props.style} onChange={this.handleValue} ref={this.props.ref} type="text"/>
+                <InputArea style={this.props.style} value={this.props.value} onChange={this.props.onChangeValue}
+                 ref={this.props.ref} name={this.props.name} type="text"/>
             </Container> 
         );
     }

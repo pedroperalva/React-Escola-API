@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Input from '../components/Input';
@@ -41,6 +41,16 @@ class Cadastro extends Component {
         )
     }
 }
+const animationFrame = keyframes`
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+`
 const DivPrincipal = styled.div`
     display: grid;
     grid-gap: 20px;
@@ -74,6 +84,7 @@ const DivMain = styled.main`
     grid-gap:20px;
     justify-content: center;
     align-items: center;
+    animation: ${animationFrame} 1s;
 `
 const DivFooter = styled.footer`
     grid-area:footer;

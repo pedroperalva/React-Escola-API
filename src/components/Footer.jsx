@@ -20,6 +20,7 @@ const Rodape = styled.footer`
 const Copy = styled.p`
     color: #BADCF5;
     font-size: 1.4rem;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 `
 export default Footer;
