@@ -18,8 +18,7 @@ class Menu extends Component {
                 </div>
                 <div>
                     <Ul>
-                        <StyledNavLink to="/Login">Login</StyledNavLink>
-                        <StyledNavLink to="/Cadastro">Registro</StyledNavLink>
+                        <StyledNavLink to="/Login">Portal</StyledNavLink>
                     </Ul>
                 </div>
             </Nav>

@@ -16,7 +16,7 @@ class Login extends Component {
                 </DivHeader>
                 <DivMain>
                     <Form>
-                        <Titulo>Login</Titulo>
+                        <Titulo>Portal</Titulo>
                         <Input>Email:</Input>
                         <Input>Senha:</Input>
                         <Button style={{width:'100%'}}>Login</Button>

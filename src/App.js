@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import QuemSomos from "./pages/QuemSomos";
-import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import Contato from "./pages/Contato";
 import Tour from "./pages/Tour";
@@ -18,7 +17,6 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/quemsomos" component={QuemSomos} />
-            <Route exact path="/cadastro" component={Cadastro} />
             <Route exact path="/contato" component={Contato} />
             <Route exact path="/tour" component={Tour} />
             <Route exact path="/sistema" component={Sistema} />
