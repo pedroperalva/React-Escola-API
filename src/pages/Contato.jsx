@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Photo from '../img/img1.png';
 import BgPhoto from '../img/bg-img.jpg';
 import Input from '../components/Input';
@@ -14,12 +14,23 @@ class Contato extends Component {
         super(props)
 
         this.state={
-            show:true
+            show:true,
+            formValues:{
+                nome:"",
+                email:"",
+                telefone:"",
+                mensagem:""
+            }
         }
     }
     handleChange = (e)=>{
-        e.preventDefault()
+        e.preventDefault()    
         this.setState({show:!this.state.show})
+    }
+    handleChangeInput = (e)=>{
+        let formValues = this.state.formValues
+        formValues[e.target.name] = e.target.value
+        this.setState({formValues})
     }
     render() {
 
@@ -33,10 +44,12 @@ class Contato extends Component {
                             <Titulo>Contato</Titulo>
                             <Imagem src={Photo} alt="imgcontato"/>
                             <Form onSubmit={this.handleChange}>
-                                <Input>Nome:</Input>
-                                <Input>Email:</Input>
-                                <Input>Telefone:</Input>
-                                <TextArea>Mensagem:</TextArea>
+                                <h1>{this.state.formValues.nome}</h1>
+                                <h1>{this.state.formValues.email}</h1>
+                                <Input value={this.state.formValues.nome} name={'nome'} onChangeValue={this.handleChangeInput}>Nome:</Input>
+                                <Input value={this.state.formValues.email} name={'email'} onChangeValue={this.handleChangeInput}>Email:</Input>
+                                <Input value={this.state.formValues.telefone} name={'telefone'} onChangeValue={this.handleChangeInput}>Telefone:</Input>
+                                <TextArea value={this.state.formValues.mensagem} name={'mensagem'} onChangeValue={this.handleChangeInput}>Mensagem:</TextArea>
                                 <Button style={{ width: '400px' }}>Enviar</Button>
                             </Form>
                             </>
@@ -57,6 +70,16 @@ class Contato extends Component {
     }
 
 }
+const animationFrame = keyframes`
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+`
 const DivPrincipal = styled.div`
     display: grid;
     grid-gap: 20px;
@@ -92,6 +115,7 @@ const DivMain = styled.main`
     grid-gap:20px;
     justify-content: center;
     align-items: center;
+    animation: ${animationFrame} 1.5s;
 `
 const Titulo = styled.h1`
     grid-area:titulo;
@@ -109,7 +133,7 @@ const Form = styled.form`
     border: 1px solid rgba(255, 255, 255, 0.082);
     box-shadow: 10px 10px 10px 10px rgb(0 0 0 / 40%);
     border-radius: 10px;
-    padding: 10px;
+    padding: 30px;
     color: #001B44;
 `
 

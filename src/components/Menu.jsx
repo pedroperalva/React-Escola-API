@@ -35,7 +35,6 @@ const Ul = styled.ul`
     display: flex;
     list-style: none;
     line-height: 8rem;
-
 `
 const StyledNavLink = styled(NavLink)`
     text-decoration: none;

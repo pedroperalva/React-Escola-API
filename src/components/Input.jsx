@@ -2,22 +2,14 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 class Input extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            value:""
-        };
-    }
-    handleValue= (e)=>{
-        console.log(e.target.value)
-        this.setState({value:e.target.value})
-    }
-    render() { 
+
+    render() {
         return (
-            <Container> 
+            <Container>
                 <Label>{this.props.children}</Label>
-                <InputArea style={this.props.style} onChange={this.handleValue} ref={this.props.ref} type="text"/>
-            </Container> 
+                <InputArea style={this.props.style} value={this.props.value} onChange={this.props.onChangeValue}
+                 ref={this.props.ref} name={this.props.name} type="text" />
+            </Container>
         );
     }
 }
@@ -32,7 +24,7 @@ const Label = styled.label`
     font-size: 18px;
     font-weight: 700;
 `
-    
+
 const InputArea = styled.input`
     height: 35px;
     border-radius: 5px;

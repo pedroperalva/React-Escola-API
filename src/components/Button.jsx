@@ -16,8 +16,6 @@ class Button extends Component{
 
 const Botao = styled.button`
     font-size: 18px;
-    font-family: 'Allison', cursive;
-    font-family: 'Azeret Mono', monospace;
     font-weight: 700;
     color: #BADCF5;
     background-color: #001B44;
