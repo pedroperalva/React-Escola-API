@@ -5,9 +5,52 @@ import Footer from '../components/Footer';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import BgPhoto from '../img/img5.png';
+import ValidationError from '../components/ValidationError';
+import Logo from '../img/logo1.png';
 
 class Login extends Component {
-
+    
+    constructor(props){
+        super(props)
+        this.state = {
+            formValues:{
+            email:"",
+            senha:""
+            },
+            errors:{}
+        }
+    }
+    validationFields = ()=>{
+        let formValues = this.state.formValues
+        let isValid = true;
+        const errors = {}
+        if(formValues.email !== "taiscunha@gmail.com" && formValues.email.length > 0){
+            errors.errorMensagem = "O Email é invalido"
+            isValid = false;
+        }
+        if(formValues.senha !== "123456789" && formValues.senha.length > 0 && formValues.email === "taiscunha@gmail.com"){
+            errors.errorTelefone = "A senha não corresponde ao email cadastrado"
+            isValid = false;
+        }
+        if(!formValues.senha || !formValues.email){
+            errors.errorFields = "Todos os campos devem ser preenchidos"
+            isValid = false;
+        }
+            this.setState({errors})
+            return isValid
+        }
+    handleSubmit = (e)=>{
+        e.preventDefault()
+        const isValid = this.validationFields()
+        if (isValid){
+            this.props.history.push('/sistema')
+        }
+    }
+    handleChangeInput = (e)=>{
+        let formValues = this.state.formValues
+        formValues[e.target.name] = e.target.value
+        this.setState({formValues})
+    }
     render() {
         return (
             <DivPrincipal>
@@ -15,10 +58,11 @@ class Login extends Component {
                     <Header />
                 </DivHeader>
                 <DivMain>
-                    <Form>
-                        <Titulo>Portal</Titulo>
-                        <Input>Email:</Input>
-                        <Input>Senha:</Input>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Imagem src={Logo}></Imagem>
+                        <Input value={this.state.formValues.email} type={'text'} name={'email'} onChangeValue={this.handleChangeInput}>Email:</Input>
+                        <Input value={this.state.formValues.senha} type={'password'} name={'senha'} onChangeValue={this.handleChangeInput}>Senha:</Input>
+                        <ValidationError error={this.state.errors}/>
                         <Button style={{width:'100%'}}>Login</Button>
                     </Form>
                 </DivMain>
@@ -78,12 +122,11 @@ const DivMain = styled.main`
 const DivFooter = styled.footer`
     grid-area:footer;
 `
-const Titulo = styled.h1`
-    grid-area:titulo;
-    text-align: center;
-    color: #001B44;
-    font-size: 50px;
+const Imagem = styled.img`
+    width:8rem;
+    height:7rem;
     margin-bottom: 15px;
+    border-radius: 15px;
 `
 const Form = styled.form`
     grid-area:main;
@@ -93,5 +136,6 @@ const Form = styled.form`
     padding: 30px;
     color: #001B44;
     background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
 `
 export default Login;

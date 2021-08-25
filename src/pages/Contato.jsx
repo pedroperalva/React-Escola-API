@@ -7,6 +7,7 @@ import Button from '../components/Button';
 import TextArea from '../components/TextArea';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ValidationError from '../components/ValidationError';
 
 class Contato extends Component {
 
@@ -20,12 +21,39 @@ class Contato extends Component {
                 email:"",
                 telefone:"",
                 mensagem:""
-            }
+            },
+            errors:{}
         }
     }
-    handleChange = (e)=>{
-        e.preventDefault()    
-        this.setState({show:!this.state.show})
+    validationFields = ()=>{
+        let formValues = this.state.formValues
+        let isValid = true;
+        const errors = {}
+        if(formValues.nome.charAt(0) !== formValues.nome.charAt(0).toUpperCase() && formValues.nome.length > 0){               
+            errors.errorNome = "A primeira letra do nome deve ser maiúscula"
+            isValid = false;
+        }
+        if(!formValues.email.includes("@") && formValues.email.length > 0){
+            errors.errorMensagem = "Insira um Email válido"
+            isValid = false;
+        }
+        if((formValues.telefone.length > 11 || formValues.telefone.length < 10 || isNaN(formValues.telefone)) && formValues.telefone.length > 0){
+            errors.errorTelefone = "Insira um telefone válido"
+            isValid = false;
+        }
+        if(!formValues.nome || !formValues.email || !formValues.telefone || !formValues.mensagem){
+            errors.errorFields = "Todos os campos devem ser preenchidos"
+            isValid = false;
+        }
+            this.setState({errors})
+            return isValid
+        }
+    handleSubmit = (e)=>{
+        e.preventDefault()
+        const isValid = this.validationFields()
+        if (isValid){
+            this.setState({show:!this.state.show})
+        }
     }
     handleChangeInput = (e)=>{
         let formValues = this.state.formValues
@@ -43,13 +71,12 @@ class Contato extends Component {
                         {this.state.show? (<>
                             <Titulo>Contato</Titulo>
                             <Imagem src={Photo} alt="imgcontato"/>
-                            <Form onSubmit={this.handleChange}>
-                                <h1>{this.state.formValues.nome}</h1>
-                                <h1>{this.state.formValues.email}</h1>
-                                <Input value={this.state.formValues.nome} name={'nome'} onChangeValue={this.handleChangeInput}>Nome:</Input>
-                                <Input value={this.state.formValues.email} name={'email'} onChangeValue={this.handleChangeInput}>Email:</Input>
-                                <Input value={this.state.formValues.telefone} name={'telefone'} onChangeValue={this.handleChangeInput}>Telefone:</Input>
-                                <TextArea value={this.state.formValues.mensagem} name={'mensagem'} onChangeValue={this.handleChangeInput}>Mensagem:</TextArea>
+                            <Form onSubmit={this.handleSubmit}>  
+                                <Input value={this.state.formValues.nome} type={'text'} name={'nome'} onChangeValue={this.handleChangeInput}>Nome:</Input>
+                                <Input value={this.state.formValues.email} type={'text'} name={'email'} onChangeValue={this.handleChangeInput}>Email:</Input>
+                                <Input value={this.state.formValues.telefone} type={'text'} name={'telefone'} onChangeValue={this.handleChangeInput}>Telefone:</Input>
+                                <TextArea value={this.state.formValues.mensagem} type={'text'} name={'mensagem'} onChangeValue={this.handleChangeInput}>Mensagem:</TextArea>
+                                <ValidationError error={this.state.errors}/>
                                 <Button style={{ width: '400px' }}>Enviar</Button>
                             </Form>
                             </>
@@ -105,6 +132,7 @@ const DivHeader= styled.header`
 `
 const DivFooter= styled.footer`
     grid-area:footer;
+    margin-top: 50px;
 `
 const DivMain = styled.main`
     grid-area:content;
@@ -122,6 +150,8 @@ const Titulo = styled.h1`
     text-align: center;
     color: #001B44;
     font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 70px;
 `
 const Imagem = styled.img`
     grid-area:main1;

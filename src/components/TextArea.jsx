@@ -8,7 +8,7 @@ class TextArea extends Component {
             <Container> 
                 <Label>{this.props.children}</Label>
                 <InputArea style={this.props.style} value={this.props.value} onChange={this.props.onChangeValue}
-                 ref={this.props.ref} name={this.props.name} type="text"/>
+                 ref={this.props.ref} name={this.props.name} type={this.props.type}/>
             </Container> 
         );
     }
