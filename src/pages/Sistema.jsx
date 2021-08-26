@@ -21,6 +21,7 @@ const Sistema = (props) => {
       const data = await res.data.resultado;
       setSlow(true);
       setAlunos(data);
+      return alunos
       /*!!alunos && slow ? alunos.map((info, i) => (
         <div>
           <p>{info.nome}</p>
