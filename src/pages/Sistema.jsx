@@ -21,7 +21,6 @@ const Sistema = (props) => {
       const data = await res.data.resultado;
       setSlow(true);
       setAlunos(data);
-      return alunos
       /*!!alunos && slow ? alunos.map((info, i) => (
         <div>
           <p>{info.nome}</p>
@@ -56,15 +55,14 @@ const Sistema = (props) => {
                 </Header>
             </DivHeader>
 
+            <DivCards>
 
-            {/* Mostrar todos os alunos*/
-            !!alunos && slow? alunos.map((info, i)=> {
-                return (
-                    <>
-                        <Itens>{info.nome}</Itens>
-                    </>
-                )
-            }): <Itens>Error ao carregar a API</Itens>}
+                {
+                !!alunos && slow? alunos.map((info, i)=> (
+                <p>{info.nome}</p>
+                
+                )): <p>Error ao carregar a API</p>}
+            </DivCards>
 
             {/* Mostra a Aluno referente ao email
                 !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p> */}
@@ -97,7 +95,7 @@ const DivHeader = styled.header`
 const DivFooter = styled.footer`
     grid-area:footer;
     `
-const Itens = styled.p`
+const DivCards = styled.main`
     grid-area: "content";
 `
 export default Sistema;
