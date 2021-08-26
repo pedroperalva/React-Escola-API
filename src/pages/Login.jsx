@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled, {keyframes} from 'styled-components'
 import Header from '../components/Header';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -55,7 +56,9 @@ class Login extends Component {
         return (
             <DivPrincipal>
                 <DivHeader>
-                    <Header />
+                    <Header>
+                        <Menu/>
+                    </Header>
                 </DivHeader>
                 <DivMain>
                     <Form onSubmit={this.handleSubmit}>

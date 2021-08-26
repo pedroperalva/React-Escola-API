@@ -6,6 +6,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import TextArea from '../components/TextArea';
 import Header from '../components/Header';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import ValidationError from '../components/ValidationError';
 
@@ -65,7 +66,9 @@ class Contato extends Component {
             return (
                 <DivPrincipal>
                     <DivHeader>
-                        <Header/>
+                        <Header>
+                            <Menu/>
+                        </Header>
                     </DivHeader>
                     <DivMain>
                         {this.state.show? (<>

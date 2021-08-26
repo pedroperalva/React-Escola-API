@@ -1,23 +1,77 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SubMenu from '../components/SubMenu';
+import {
+  List, ListOne, Create, Edit, DeleteAluno,
+} from '../components/AlunoService';
 
-class Sistema extends Component {
+const Sistema = (props) => {
+    const [alunos, setAlunos] = useState([]);
+    const [slow, setSlow] = useState(false);
 
-    render() {
-        return (
-            <DivPrincipal>
-                <DivHeader>
-                    <Header />
-                </DivHeader>
-                <DivFooter>
-                    <Footer />
-                </DivFooter>
-            </DivPrincipal>
-        )
+    const loadAlunos = async () => {
+    try {
+      const res = await List();
+      const data = await res.data.resultado;
+      setSlow(true);
+      setAlunos(data);
+      !!alunos && slow ? alunos.map((info, i) => (
+        <div>
+          <p>{info.nome}</p>
+        </div>
+      )) : <p>Error ao carregar a API</p>;
+    } catch (error) {
+      console.log(error);
     }
+  };
+
+  const loadAluno = async (email) => {
+    try {
+      const res = await ListOne(email);
+      const data = await res.data.resultado;
+      for (const item of data) {
+        if (item.emailresp === email) {
+          setSlow(true);
+          setAlunos(item);
+          return alunos;
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+    return (
+        <DivPrincipal>
+            <DivHeader>
+                <Header>
+                    <SubMenu/>
+                </Header>
+            </DivHeader>
+
+
+            {/* Mostrar todos os alunos
+                !!alunos && slow? alunos.map((info, i)=> {
+                    return (
+                        <div>
+                            <p>{info.nome}</p>
+                        </div>
+                    )
+                }): <p>Error ao carregar a API</p> */}
+
+            {/* Mostra a Aluno referente ao email
+                !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p> */}
+
+
+            <DivFooter>
+                <Footer />
+            </DivFooter>
+        </DivPrincipal>
+    )
 }
+
 const DivPrincipal = styled.div`
     display: grid;
     grid-gap: 20px;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import Header from '../components/Header';
+import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
 class QuemSomos extends Component {
@@ -9,7 +10,9 @@ class QuemSomos extends Component {
         return (
             <DivPrincipal>
                 <DivHeader>
-                    <Header />
+                    <Header>
+                        <Menu/>
+                    </Header>
                 </DivHeader>
                 <DivFooter>
                     <Footer />

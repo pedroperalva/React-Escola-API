@@ -9,6 +9,7 @@ import Inst3 from '../img/inst3.jpg';
 import Inst4 from '../img/inst4.jpg';
 import Inst5 from '../img/inst5.jpg';
 import BgPhoto from '../img/bg-img2.jpg';
+import Menu from '../components/Menu';
 
 class Tour extends Component {
 
@@ -16,7 +17,9 @@ class Tour extends Component {
         return (
             <DivPrincipal>
                 <DivHeader>
-                    <Header />
+                    <Header>
+                        <Menu/>
+                    </Header>
                 </DivHeader>
                 <DivMain>
                     <Titulo>Nossas Instalações</Titulo>
