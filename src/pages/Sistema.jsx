@@ -11,17 +11,21 @@ const Sistema = (props) => {
     const [alunos, setAlunos] = useState([]);
     const [slow, setSlow] = useState(false);
 
+    useEffect(() => {
+        loadAlunos()
+    }, [])
+
     const loadAlunos = async () => {
     try {
       const res = await List();
       const data = await res.data.resultado;
       setSlow(true);
       setAlunos(data);
-      !!alunos && slow ? alunos.map((info, i) => (
+      /*!!alunos && slow ? alunos.map((info, i) => (
         <div>
           <p>{info.nome}</p>
         </div>
-      )) : <p>Error ao carregar a API</p>;
+      )) : <p>Error ao carregar a API</p>;*/
     } catch (error) {
       console.log(error);
     }
@@ -52,14 +56,14 @@ const Sistema = (props) => {
             </DivHeader>
 
 
-            {/* Mostrar todos os alunos
-                !!alunos && slow? alunos.map((info, i)=> {
-                    return (
-                        <div>
-                            <p>{info.nome}</p>
-                        </div>
-                    )
-                }): <p>Error ao carregar a API</p> */}
+            {/* Mostrar todos os alunos*/
+            !!alunos && slow? alunos.map((info, i)=> {
+                return (
+                    <>
+                        <Itens>{info.nome}</Itens>
+                    </>
+                )
+            }): <Itens>Error ao carregar a API</Itens>}
 
             {/* Mostra a Aluno referente ao email
                 !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p> */}
@@ -91,5 +95,8 @@ const DivHeader = styled.header`
 `
 const DivFooter = styled.footer`
     grid-area:footer;
+    `
+const Itens = styled.p`
+    grid-area: "content";
 `
 export default Sistema;
