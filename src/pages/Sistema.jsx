@@ -6,6 +6,7 @@ import SubMenu from '../components/SubMenu';
 import {
   List, ListOne, Create, Edit, DeleteAluno,
 } from '../components/AlunoService';
+import FormMatriculate from '../components/FormMatriculate';
 
 const Sistema = (props) => {
     const [alunos, setAlunos] = useState([]);
@@ -47,33 +48,43 @@ const Sistema = (props) => {
     }
   }
 
-    return (
-        <DivPrincipal>
-            <DivHeader>
-                <Header>
-                    <SubMenu/>
-                </Header>
-            </DivHeader>
+  const MatriculateAluno = async (data) => {
+    const res = await Create(data);
+    setSlow(true);
+    setAlunos(res)
+  }
 
-            <DivCards>
+  return (
+      <DivPrincipal>
+          <DivHeader>
+              <Header>
+                  <SubMenu/>
+              </Header>
+          </DivHeader>
 
-              {/* Mostra todos os Alunos cadastrados
-              !!alunos && slow? alunos.map((info, i)=> (
-              <p>{info.nome}</p>
-              
-              )): <p>Error ao carregar a API</p>*/}
+          <DivCards>
+
+            {/* Mostra todos os Alunos cadastrados
+            !!alunos && slow? alunos.map((info, i)=> (
+            <p>{info.nome}</p>
             
-              {/* Mostra a Aluno referente ao email/
-              !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p>*/}
-            </DivCards>
+            )): <p>Error ao carregar a API</p>*/}
+          
+            {/* Mostra a Aluno referente ao email/
+            !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p>*/}
+
+            <FormMatriculate></FormMatriculate>
+
+
+          </DivCards>
 
 
 
-            <DivFooter>
-                <Footer />
-            </DivFooter>
-        </DivPrincipal>
-    )
+          <DivFooter>
+              <Footer />
+          </DivFooter>
+      </DivPrincipal>
+  )
 }
 
 const DivPrincipal = styled.div`
