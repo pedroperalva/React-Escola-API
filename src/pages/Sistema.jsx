@@ -12,7 +12,7 @@ const Sistema = (props) => {
     const [slow, setSlow] = useState(false);
 
     useEffect(() => {
-        loadAlunos()
+        loadAluno("teste@gmail.com")
     }, [])
 
     const loadAlunos = async () => {
@@ -57,15 +57,16 @@ const Sistema = (props) => {
 
             <DivCards>
 
-                {
-                !!alunos && slow? alunos.map((info, i)=> (
-                <p>{info.nome}</p>
-                
-                )): <p>Error ao carregar a API</p>}
+              {/* Mostra todos os Alunos cadastrados
+              !!alunos && slow? alunos.map((info, i)=> (
+              <p>{info.nome}</p>
+              
+              )): <p>Error ao carregar a API</p>*/}
+            
+              {/* Mostra a Aluno referente ao email/
+              !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p>*/}
             </DivCards>
 
-            {/* Mostra a Aluno referente ao email
-                !!alunos && slow ? <p>{alunos.nome}</p> : <p>Error ao carregar a API</p> */}
 
 
             <DivFooter>
