@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import Header from '../components/Header';
+import HeaderSistema from '../components/HeaderSistema';
 import Footer from '../components/Footer';
 
 class Sistema extends Component {
@@ -9,8 +9,11 @@ class Sistema extends Component {
         return (
             <DivPrincipal>
                 <DivHeader>
-                    <Header />
+                    <HeaderSistema />
                 </DivHeader>
+                <DivMain>
+                    
+                </DivMain>
                 <DivFooter>
                     <Footer />
                 </DivFooter>
@@ -35,6 +38,10 @@ const DivPrincipal = styled.div`
 const DivHeader = styled.header`
     grid-area:header;
 `
+const DivMain = styled.main`
+    grid-area:content;
+`
+
 const DivFooter = styled.footer`
     grid-area:footer;
 `
