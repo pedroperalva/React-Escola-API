@@ -137,5 +137,6 @@ const Form = styled.form`
     color: #001B44;
     background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
+    width: 300px;
 `
 export default Login;
