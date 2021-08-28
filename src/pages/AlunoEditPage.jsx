@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Input from '../components/Input'
 import AlunosService from '../service/AlunosService'
 
 class AlunoEditPage extends Component {
@@ -7,12 +8,12 @@ class AlunoEditPage extends Component {
     this.state = {
       id: null,
       aluno:{
-        nome: '', 
+        nome: '',
         mae: '', 
         pai: '', 
         endereco: '' , 
         telefone: '', 
-        emailresp: ''
+        emailresp: '',
       }
     }
   }
@@ -30,7 +31,7 @@ class AlunoEditPage extends Component {
       let aluno = res.data.resultado[0]
       this.setState({
         id: 1,
-        aluno
+        aluno,
       })
     }
     catch(error) {
@@ -39,64 +40,68 @@ class AlunoEditPage extends Component {
     }
 
   }
+  sendPost = async () =>{
+    let data = this.state.aluno
 
-   sendPost = async () =>{
-    let data = {
-      nome: this.state.aluno.nome, 
-      mae: this.state.aluno.mae, 
-      pai: this.state.aluno.pai, 
-      endereco: this.state.aluno.endereco , 
-      telefone: this.state.aluno.telefone, 
-      emailresp: this.state.aluno.emailresp
+    if(data.nome === ''){
+      alert("Nome é obrigatório!")
+      return
     }
-    if(!data.nome || data.nome === ''){
-      console.log(data.nome)
-            alert("Nome é obrigatório!")
-            return;
-    }
-    if(!data.mae || data.mae === ''){
-        alert("Mãe é obrigatório!")
-        return;
+    if(data.mae === ''){
+      alert("Mãe é obrigatório!")
+      return
     }
     
-    if(!data.pai || data.pai === ''){
-        alert("Pai é obrigatório!")
-        return;
+    if(data.pai === ''){
+      alert("Pai é obrigatório!")
+      return
     }
-    if(!data.endereco || data.endereco === ''){
-        alert("Endereço é obrigatório!")
-        return;
+    if(data.endereco === ''){
+      alert("Endereço é obrigatório!")
+      return
     }
-    if(!data.telefone || data.telefone === ''){
-        alert("Telefone é obrigatório!")
-        return;
+    if(data.telefone === ''){
+      alert("Telefone é obrigatório!")
+      return
     }
-    if(!data.emailresp || data.emailresp === ''){
-        alert("Email do responsável é obrigatório!")
-        return;
+    if(data.emailresp === ''){
+      alert("Email do responsável é obrigatório!")
+      return
     }
-
     try {
       if(this.state.id){
-          await AlunosService.editAluno(data.emailresp, data)
-          alert("Aluno editado com sucesso!")
-        }
-        else{
-          await AlunosService.addAluno(data)
-          alert("Aluno cadastrado com sucesso!")
-        }
-        this.props.history.push('/sistema-list')
-      } catch (error) {
-          console.log(error)
-          alert("Erro ao cadastrar aluno.")
+        await AlunosService.editAluno(data.emailresp, data)
+        alert("Aluno editado com sucesso!")
       }
+      else{
+        await AlunosService.addAluno(data)
+        alert("Aluno cadastrado com sucesso!")
+      }
+      this.props.history.push('/sistema-list')
+    } catch (error) {
+        console.log(data)
+        console.log(error)
+        alert("error")
     }
-    
+  }
+  handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
+  handleRedirect = () => {
+    this.props.history.replace('/sistena-list')
+  }
+
+  handleChangeInput = (e) => {
+    let input = this.state.aluno
+    input[e.target.name] = e.target.value
+    console.log(input[e.target.name])
+    this.setState({ input })
+  }
   render() {
      let title = this.state.id ? 'Editar Aluno' : 'Novo Aluno'
      let desc = this.state.id ? 'Editar informações de um aluno' : 'Formulário de criação de alunos'
-    return (
+    return(
       <div>
 
         <div>
@@ -105,57 +110,26 @@ class AlunoEditPage extends Component {
               <p>{desc}</p>
           </div>
           <div>
-              <button onClick={() => this.props.history.replace('/sistema-list')}>
+              <button onClick={this.handleRedirect}>
                   Cancelar
               </button>
-              <button onClick={() => this.sendPost()}>
+              <button onClick={this.sendPost}>
                   Salvar
               </button>
           </div>
         </div>
-        <form onSubmit={e => e.preventDefault()}>
-          <div className="form-group">
-              <label htmlFor="title">Nome</label>
-              <input
-                  type="text"
-                  value={this.state.aluno.nome}
-                  onChange={e => this.setState({ aluno:{nome: e.target.value} })} />
-          </div>
-          <div>
-              <label>Mae</label>
-              <input
-                  type="text"
-                  value={this.state.aluno.mae}
-                  onChange={e => this.setState({ aluno:{mae: e.target.value} })} />
-          </div>
-          <div>
-              <label>Pai</label>
-              <input
-                  type="text"
-                  value={this.state.aluno.pai}
-                  onChange={e => this.setState({ aluno:{pai: e.target.value} })} />
-          </div>
-          <div>
-              <label>Endereço</label>
-              <input
-                  type="text"
-                  value={this.state.aluno.endereco}
-                  onChange={e => this.setState({aluno: {endereco: e.target.value} })} />
-          </div>
-          <div>
-              <label>Telefone</label>
-              <input
-                  type="text"
-                  value={this.state.aluno.telefone}
-                  onChange={e => this.setState({aluno: {telefone: e.target.value} })} />
-          </div>
-          <div>
-              <label>Email do responsável</label>
-              <input
-                  type="text"
-                  value={this.state.aluno.emailresp}
-                  onChange={e => this.setState({ aluno:{emailresp: e.target.value} })} />
-          </div>
+        <form onSubmit={this.handleSubmit}>
+          <Input value={this.state.aluno.nome} type={'text'} name={'nome'} onChangeValue={this.handleChangeInput}>Nome:</Input>
+
+          <Input value={this.state.aluno.mae} type={'text'} name={'mae'} onChangeValue={this.handleChangeInput}>Mãe:</Input>
+
+          <Input value={this.state.aluno.pai} type={'text'} name={'pai'} onChangeValue={this.handleChangeInput}>Pai:</Input>
+
+          <Input value={this.state.aluno.endereco} type={'text'} name={'endereco'} onChangeValue={this.handleChangeInput}>Endereço:</Input>
+          
+          <Input value={this.state.aluno.telefone} type={'text'} name={'telefone'} onChangeValue={this.handleChangeInput}>Telefone:</Input>
+          
+          <Input value={this.state.aluno.emailresp} type={'text'} name={'emailresp'} onChangeValue={this.handleChangeInput}>E-mail do responsável :</Input>
         </form>
       </div>
     )
