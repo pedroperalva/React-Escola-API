@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path="/sistema-list" component={AlunoListPage} />
             <Route path="/sistema-detail/:emailresp" component={AlunoDetailPage} />
             <Route exact path="/sistema-add" component={AlunoEditPage} />
-            <Route path="/sistema-edit/:emailresp" component={AlunoDetailPage} />
+            <Route path="/sistema-edit/:emailresp" component={AlunoEditPage} />
           </Switch>
         </Router>
       </div>

@@ -5,7 +5,7 @@ class AlunoDetailPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      alunos: null
+      alunos: {}
     }
   }
 
@@ -24,20 +24,20 @@ class AlunoDetailPage extends Component {
     }
   }
 
-  async deleteAluno(email) {
+  async deleteAluno(email, data) {
         
-        if (!window.confirm("Deseja realmente excluir este aluno?")) return;
+    if (!window.confirm("Deseja realmente excluir este aluno?")) return;
 
-        try {
-            await AlunosService.deleteAluno(email)
-            alert("Aluno excluído com sucesso")
-            this.props.history.replace('/sistema-list')
-        } catch (error) {
-            console.log(error);
-            alert("Não foi excluir o aluno.")
-        }
-
+    try {
+        await AlunosService.deleteAluno(email, data)
+        alert("Aluno excluído com sucesso")
+        this.props.history.replace('/sistema-list')
+    } catch (error) {
+        console.log(error);
+        alert("Não foi excluir o aluno.")
     }
+
+  }
   
   render() {
     return (
@@ -46,7 +46,7 @@ class AlunoDetailPage extends Component {
         <section>
           <div>
             <h2>Aluno</h2>
-            <p>Cadastro do alunos</p>
+            <p>Detalhes do aluno</p>
           </div>
           <div>
             <button onClick={() => this.props.history.goBack()}>

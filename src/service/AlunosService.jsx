@@ -18,7 +18,7 @@ const AlunosService = {
     return axios.post(endpoin, data)
   },
   
-  async editAluno (data, alunoEmail) {
+  async editAluno (alunoEmail, data) {
     const endpoin = `${url}/${alunoEmail}`
     return axios.put(endpoin, data)
   },

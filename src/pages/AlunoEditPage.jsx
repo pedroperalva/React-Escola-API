@@ -5,27 +5,33 @@ class AlunoEditPage extends Component {
   constructor(props){
     super(props)
     this.state = {
-      matricula: null,
-      nome: '',
-      mae: '',
-      pai: '',
-      endereco: '',
-      telefone: '',
-      emailresp: '',
+      id: null,
+      aluno:{
+        nome: '', 
+        mae: '', 
+        pai: '', 
+        endereco: '' , 
+        telefone: '', 
+        emailresp: ''
+      }
     }
   }
   componentDidMount() {
     if(this.props?.match?.params?.emailresp){
       let email = this.props.match.params.emailresp
+      console.log('ok')
       this.loadAluno(email)
     }
   }
 
-  async loadAluno(email) {
+  loadAluno = async  (email) => {
     try {
       let res = await AlunosService.listAluno(email)
-      let post = res.data.resultado[0]
-      this.setState(post)
+      let aluno = res.data.resultado[0]
+      this.setState({
+        id: 1,
+        aluno
+      })
     }
     catch(error) {
       console.log(error)
@@ -34,16 +40,17 @@ class AlunoEditPage extends Component {
 
   }
 
-  async sendPost(){
+   sendPost = async () =>{
     let data = {
-        nome : this.state.nome,
-        mae : this.state.mae,
-        pai : this.state.pai,
-        endereco : this.state.endereco,
-        telefone : this.state.telefone,
-        emailresp : this.state.emailresp,
+      nome: this.state.aluno.nome, 
+      mae: this.state.aluno.mae, 
+      pai: this.state.aluno.pai, 
+      endereco: this.state.aluno.endereco , 
+      telefone: this.state.aluno.telefone, 
+      emailresp: this.state.aluno.emailresp
     }
     if(!data.nome || data.nome === ''){
+      console.log(data.nome)
             alert("Nome é obrigatório!")
             return;
     }
@@ -70,15 +77,15 @@ class AlunoEditPage extends Component {
     }
 
     try {
-      if(this.state.emailresp){
-          await AlunosService.editAluno(data, this.state.emailresp)
+      if(this.state.id){
+          await AlunosService.editAluno(data.emailresp, data)
           alert("Aluno editado com sucesso!")
-      }
-      else{
+        }
+        else{
           await AlunosService.addAluno(data)
           alert("Aluno cadastrado com sucesso!")
-      }
-      this.props.history.push('/sistema-list')
+        }
+        this.props.history.push('/sistema-list')
       } catch (error) {
           console.log(error)
           alert("Erro ao cadastrar aluno.")
@@ -87,11 +94,69 @@ class AlunoEditPage extends Component {
     
 
   render() {
-     let nome = this.state.emailresp ? 'Editar Aluno' : 'Novo Aluno'
-     let desc = this.state.emailresp ? 'Editar informações de um aluno' : 'Formulário de criação de alunos'
+     let title = this.state.id ? 'Editar Aluno' : 'Novo Aluno'
+     let desc = this.state.id ? 'Editar informações de um aluno' : 'Formulário de criação de alunos'
     return (
       <div>
-      
+
+        <div>
+          <div>
+              <h2>{title}</h2>
+              <p>{desc}</p>
+          </div>
+          <div>
+              <button onClick={() => this.props.history.replace('/sistema-list')}>
+                  Cancelar
+              </button>
+              <button onClick={() => this.sendPost()}>
+                  Salvar
+              </button>
+          </div>
+        </div>
+        <form onSubmit={e => e.preventDefault()}>
+          <div className="form-group">
+              <label htmlFor="title">Nome</label>
+              <input
+                  type="text"
+                  value={this.state.aluno.nome}
+                  onChange={e => this.setState({ aluno:{nome: e.target.value} })} />
+          </div>
+          <div>
+              <label>Mae</label>
+              <input
+                  type="text"
+                  value={this.state.aluno.mae}
+                  onChange={e => this.setState({ aluno:{mae: e.target.value} })} />
+          </div>
+          <div>
+              <label>Pai</label>
+              <input
+                  type="text"
+                  value={this.state.aluno.pai}
+                  onChange={e => this.setState({ aluno:{pai: e.target.value} })} />
+          </div>
+          <div>
+              <label>Endereço</label>
+              <input
+                  type="text"
+                  value={this.state.aluno.endereco}
+                  onChange={e => this.setState({aluno: {endereco: e.target.value} })} />
+          </div>
+          <div>
+              <label>Telefone</label>
+              <input
+                  type="text"
+                  value={this.state.aluno.telefone}
+                  onChange={e => this.setState({aluno: {telefone: e.target.value} })} />
+          </div>
+          <div>
+              <label>Email do responsável</label>
+              <input
+                  type="text"
+                  value={this.state.aluno.emailresp}
+                  onChange={e => this.setState({ aluno:{emailresp: e.target.value} })} />
+          </div>
+        </form>
       </div>
     )
   }
