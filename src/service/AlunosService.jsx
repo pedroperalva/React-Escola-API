@@ -15,17 +15,32 @@ const AlunosService = {
   
   async addAluno (data) {
     const endpoin = `${url}`
-    return axios.post(endpoin, data)
+    return axios({
+      method: 'post',
+      baseURL:endpoin,
+      headers: { 'Content-Type': 'multipart/form-data' },
+      data: data
+    })
   },
   
   async editAluno (alunoEmail, data) {
-    const endpoin = `${url}/${alunoEmail}`
-    return axios.put(endpoin, data)
+    const endpoin = `/${alunoEmail}`
+    return axios({
+      method: 'putt',
+      url:endpoin,
+      baseUrls: url,
+      headers: { 'Content-Type': 'multipart/form-data' },
+      data: data
+    })
   },
   
   async deleteAluno (alunoEmail) {
-    const endpoin = `${url}/${alunoEmail}`
-    return axios.delete(endpoin)
+    const endpoin = `/${alunoEmail}`
+    return axios({
+      method: 'delete',
+      url:endpoin,
+      baseURL: url,
+    })
   },
 }
 

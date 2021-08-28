@@ -89,7 +89,7 @@ class AlunoEditPage extends Component {
   }
 
   handleRedirect = () => {
-    this.props.history.replace('/sistena-list')
+    this.props.history.replace('/sistema-list')
   }
 
   handleChangeInput = (e) => {
@@ -127,7 +127,7 @@ class AlunoEditPage extends Component {
 
           <Input value={this.state.aluno.endereco} type={'text'} name={'endereco'} onChangeValue={this.handleChangeInput}>Endereço:</Input>
           
-          <Input value={this.state.aluno.telefone} type={'text'} name={'telefone'} onChangeValue={this.handleChangeInput}>Telefone:</Input>
+          <Input value={this.state.aluno.telefone} type={'number'} name={'telefone'} onChangeValue={this.handleChangeInput}>Telefone:</Input>
           
           <Input value={this.state.aluno.emailresp} type={'text'} name={'emailresp'} onChangeValue={this.handleChangeInput}>E-mail do responsável :</Input>
         </form>
