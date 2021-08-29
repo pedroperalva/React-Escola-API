@@ -25,8 +25,7 @@ const AlunosService = {
     const endpoin = `/${alunoEmail}`
     return axios({
       method: 'put',
-      url:endpoin,
-      baseUrls: url,
+      url: 'https://dry-peak-50185.herokuapp.com/alunos'+ endpoin,
       data: data
     })
   },
