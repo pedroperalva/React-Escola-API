@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import img1 from '../img/img4.png';
-import img2 from '../img/img7.png';
 
 class QuemSomos extends Component {
 
@@ -16,18 +15,22 @@ class QuemSomos extends Component {
                 <DivMain>
                     <Titulo>Quem Somos</Titulo>
                     <DivMensagem>
-                    No ano de 2021, 4 amigos, Pedro Peralva, Sâmela Barbosa, Italo Nascimento e Cristiano Kituxi 
-                    sentiram que os pais não contavam, no Rio de Janeiro, com um lugar confortável, 
-                    seguro e com pessoas preparadas para educar e cuidar dos primeiros anos de vida de seus filhos.<br></br><br></br>
-                    Decidiu-se então investirem na ideia e, em fevereiro de 2021, abriram a escola Resilinha.<br></br><br></br>
-                    Com uma proposta diferenciada, que visa o desenvolvimento da criança por meio de seu autoconhecimento,
-                    não demorou muito para que o nome Resilinha começasse a aparecer com destaque entre as instituições
-                    de educação infantil.
+                        <Mensagem>
+                            No ano de 2021, 4 amigos, Pedro Peralva, Sâmela Barbosa, Italo Nascimento e Cristiano Kituxi
+                            sentiram que os pais não contavam, no Rio de Janeiro, com um lugar confortável,
+                            seguro e com pessoas preparadas para educar e cuidar dos primeiros anos de vida de seus filhos.<br></br><br></br>
+                            Decidiu-se então investirem na ideia e, em fevereiro de 2021, abriram a escola Resilinha.<br></br><br></br>
+                            Com uma proposta diferenciada, que visa o desenvolvimento da criança por meio de seu autoconhecimento,
+                            não demorou muito para que o nome Resilinha começasse a aparecer com destaque entre as instituições
+                            de educação infantil.
+                        </Mensagem>
+
+                        <Imagem src={img1} />
                     </DivMensagem>
-                    <Imagem src={img1}/>
+
                     <DivMissao>
                         <TituloQuem>Missão</TituloQuem>
-                        <Linha/>
+                        <Linha />
                         <MensagemQuem>
                             A Resilinha é uma Casa de Educação que tem como meta cuidar e educar crianças com prazer e seriedade. Para isso,
                             damos uma direção intencional ao desenvolvimento de crianças de 0 a 9 anos, favorecendo o despertar de seu potencial
@@ -36,7 +39,7 @@ class QuemSomos extends Component {
                     </DivMissao>
                     <DivVisao>
                         <TituloQuem>Visão</TituloQuem>
-                        <Linha/>
+                        <Linha />
                         <MensagemQuem>
                             Oferecer a seus alunos e colaboradores a possibilidade de se desenvolverem, tornando-se cidadãos éticos,
                             capazes de contribuir para a evolução da comunidade a que pertencem.
@@ -46,7 +49,7 @@ class QuemSomos extends Component {
 
                     <DivValores>
                         <TituloQuem>Valores</TituloQuem>
-                        <Linha/>
+                        <Linha />
                         <MensagemQuem>
                             Baseia sua prática educacional na crença de que cada ser humano
                             é capaz de construir seu próprio
@@ -55,7 +58,7 @@ class QuemSomos extends Component {
                             procuramos seguir os pensadores que nos ajudam a refletir sobre o dia a dia na escola
                         </MensagemQuem>
                     </DivValores>
-                    <ImagemFooter src={img2}/>
+                  
                 </DivMain>
                 <DivFooter>
                     <Footer />
@@ -88,6 +91,9 @@ const DivPrincipal = styled.div`
     grid-template-rows: 8rem auto 70px;
     grid-auto-rows: 150px;
     background-color: #dfdfdf ;
+    @media (max-width: 600px) {
+    background-color: #dfdfdf ;
+  }
 `
 const DivMain = styled.main`
     grid-area:content;
@@ -95,14 +101,20 @@ const DivMain = styled.main`
     grid-template-areas:
     "titulo titulo titulo"
      "main1 main1 main1"
-     "main2 main2 main2"
      "main3 main4 main5"
-     "main6 main6 main6";
+     ;
     grid-gap:20px;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     animation: ${animationFrame} 1.5s;
+    padding-bottom: 200px;
+    background-color: #dfdfdf ;
+    @media (max-width: 1110px) {
+    display:flex;
+    flex-direction:column;
+    background-color: #dfdfdf ;
+  }
 `
 const DivHeader = styled.header`
     grid-area:header;
@@ -120,15 +132,23 @@ const Titulo = styled.h1`
 `
 const DivMensagem = styled.div`
     grid-area:main1;
-    width: 80%;
-    height: 300px;
-    font-size: 25px;
-    border-radius: 10px;
-    justify-self: center;
+    width: 100%;
+    height: 450px;
     padding: 40px;
     background-color: #001B44;
-    color: #BADCF5;
     box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 100%);
+    display:grid;
+    grid-template-areas: 
+        'texto'
+        'imagem';
+    margin-bottom: 200px;
+`
+const Mensagem = styled.p`
+    font-size: 20px;
+    justify-self: center;
+    color: #BADCF5;
+    grid-area:texto;
+    width: 80%;
 `
 const DivVisao = styled.div`
     grid-area:main4;
@@ -178,14 +198,12 @@ const Linha = styled.div`
     margin-bottom: 30px;
 `
 const Imagem = styled.img`
-    grid-area:main2;
+    grid-area:imagem;
     justify-self: center;
     margin-bottom: 100px;
     margin-top: 100px;
-`
-const ImagemFooter = styled.img`
-    grid-area:main6;
-    justify-self: center;
-    margin-top: 100px;
+    @media (max-width: 1035px) {
+        width: 60%;
+  }
 `
 export default QuemSomos;

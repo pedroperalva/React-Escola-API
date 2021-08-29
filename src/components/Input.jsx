@@ -29,7 +29,7 @@ const Label = styled.label`
 const InputArea = styled.input`
     height: 35px;
     border-radius: 5px;
-    border: 1px solid #0084ff66;
+    border: 1px solid #001B44;
     padding: 0;
     font-size: 18px;
     color: #101010;

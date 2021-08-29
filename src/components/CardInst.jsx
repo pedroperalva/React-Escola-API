@@ -30,11 +30,18 @@ const DivCard = styled.div`
     border-radius: 10px;
     padding: 20px;
     width: 100%; 
+    justify-content: center;
 `
 const Imagem = styled.img`
-    width:600px;
-    height:400px;
+    width:70%;
+    height:80%;
     border-radius: 10px;
     box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 100%);
+    @media (max-width: 860px) {
+        width:50%;
+    }
+    @media (max-width: 600px) {
+        width:30%;
+    }
 `
 export default CardInst;
