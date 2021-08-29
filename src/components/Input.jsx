@@ -7,8 +7,8 @@ class Input extends Component {
         return (
             <Container>
                 <Label>{this.props.children}</Label>
-                <InputArea style={this.props.style} value={this.props.value} onChange={this.props.onChangeValue}
-                 ref={this.props.ref} name={this.props.name} type={this.props.type} />
+                <InputArea style={this.props.style} placeholder={this.props.placeholder} value={this.props.value}
+                onChange={this.props.onChangeValue} ref={this.props.ref} name={this.props.name} type={this.props.type} />
             </Container>
         );
     }
@@ -24,6 +24,7 @@ const Label = styled.label`
     font-size: 18px;
     font-weight: 700;
     text-align: start;
+    color:#001B44;
 `
 
 const InputArea = styled.input`
