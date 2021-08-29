@@ -25,10 +25,10 @@ const Label = styled.label`
     font-size: 18px;
     font-weight: 700;
 ` 
-const InputArea = styled.input`
+const InputArea = styled.textarea`
     height: 120px;
     border-radius: 5px;
-    border: 1px solid #0084ff66;
+    border: 1px solid #001B44;
     padding: 0;
     font-size: 18px;
     color: #101010;

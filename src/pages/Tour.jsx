@@ -78,6 +78,10 @@ const DivMain = styled.main`
     grid-gap:20px;
     animation: ${animationFrame} 1.5s;
     justify-content: center;
+    @media (max-width: 860px) {
+    display:flex;
+    flex-direction: column;
+  }
 `
 const DivFooter = styled.footer`
     grid-area:footer;
@@ -90,5 +94,9 @@ const Titulo = styled.h1`
     font-size: 50px;
     margin-bottom: 50px;
     margin-top: 70px;
+    @media (max-width: 550px) {
+        font-size: 30px;
+  }
 `
+
 export default Tour;

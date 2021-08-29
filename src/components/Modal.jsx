@@ -13,11 +13,7 @@ class Modal extends React.Component {
         return (
             <DivPrincipal>
                 <Content src={this.props.src}></Content>
-                <div>
-                    <Close onClick={this.onClose}>
-                        x
-                    </Close>
-                </div>
+                <Close onClick={this.onClose}>x</Close> 
             </DivPrincipal>
         );
     }
@@ -37,12 +33,11 @@ const DivPrincipal = styled.div`
   align-items: center;
 `
 const Content = styled.img`
-    width: 50%; 
+    width: 60%; 
     border-radius: 15px;
 `
 const Close = styled.button`
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
 `

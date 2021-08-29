@@ -29,11 +29,11 @@ class Contato extends Component {
         let formValues = this.state.formValues
         let isValid = true;
         const errors = {}
-        if (formValues.nome.charAt(0) !== formValues.nome.charAt(0).toUpperCase() && formValues.nome.length > 0) {
-            errors.errorNome = "A primeira letra do nome deve ser maiúscula"
+        if ((formValues.nome.charAt(0) !== formValues.nome.charAt(0).toUpperCase() || !isNaN(formValues.nome)) && formValues.nome.length > 0) {
+            errors.errorNome = "Insira um nome válido"
             isValid = false;
         }
-        if (!formValues.email.includes("@") && formValues.email.length > 0) {
+        if (!formValues.email.match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/) && formValues.email.length > 0) {
             errors.errorMensagem = "Insira um Email válido"
             isValid = false;
         }
