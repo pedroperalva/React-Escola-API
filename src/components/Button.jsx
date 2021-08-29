@@ -6,7 +6,7 @@ class Button extends Component{
     render(){
         return(
             <DivButton>
-            <Botao style={this.props.style} type="submit">
+            <Botao onClick={this.props.onClick} style={this.props.style} type="submit">
                 {this.props.children}
             </Botao>
             </DivButton>

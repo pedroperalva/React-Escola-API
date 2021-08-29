@@ -10,12 +10,8 @@ const SubMenu = () => {
             <div>
                 <Ul>
                     <Imagem src={Logo}></Imagem>
-                    <StyledNavLink to="/Sistema">Exibe</StyledNavLink>
-                    <StyledNavLink to="/Sistema">Consulta</StyledNavLink>
-                    <StyledNavLink to="/Sistema">Atualiza</StyledNavLink>
-                    <StyledNavLink to="/Sistema">Deleta</StyledNavLink>
                 </Ul>
-            </div>
+            </div>   
             <div>
                 <Ul>
                     <StyledNavLink to="/">Sair</StyledNavLink>
