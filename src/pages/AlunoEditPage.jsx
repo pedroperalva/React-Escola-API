@@ -69,8 +69,8 @@ class AlunoEditPage extends Component {
       return
     }
     try {
-      if(this.state.id){
-        await AlunosService.editAluno(data.emailresp, data)
+      if(this.props?.match?.params?.emailresp){
+        await AlunosService.editAluno(this.props.match.params.emailresp, data)
         alert("Aluno editado com sucesso!")
       }
       else{

@@ -14,11 +14,9 @@ const AlunosService = {
   },
   
   async addAluno (data) {
-    const endpoin = `${url}`
     return axios({
       method: 'post',
-      baseURL:endpoin,
-      headers: { 'Content-Type': 'multipart/form-data' },
+      baseURL:url,
       data: data
     })
   },
@@ -26,10 +24,9 @@ const AlunosService = {
   async editAluno (alunoEmail, data) {
     const endpoin = `/${alunoEmail}`
     return axios({
-      method: 'putt',
+      method: 'put',
       url:endpoin,
       baseUrls: url,
-      headers: { 'Content-Type': 'multipart/form-data' },
       data: data
     })
   },
