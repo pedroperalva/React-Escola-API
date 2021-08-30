@@ -126,6 +126,10 @@ const DivPrincipal = styled.div`
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    @media (max-width: 1020px) {
+        background-image: none;
+    }
+    
 `
 const DivHeader = styled.header`
     grid-area:header;
@@ -144,6 +148,10 @@ const DivMain = styled.main`
     justify-content: center;
     align-items: center;
     animation: ${animationFrame} 1.5s;
+    @media (max-width: 1020px) {
+        display: flex;
+        flex-direction: column;
+    }
 `
 const Titulo = styled.h1`
     grid-area:titulo;
@@ -157,6 +165,10 @@ const Imagem = styled.img`
     grid-area:main1;
     max-width: 80%;
     max-height: 80%;
+    margin-left:50px;
+    @media (max-width: 1020px) {
+        display:none;
+    }
 `
 const Form = styled.form`
     grid-area:main2;
@@ -165,6 +177,12 @@ const Form = styled.form`
     border-radius: 10px;
     padding: 30px;
     color: #001B44;
+    background-color: rgba(255, 255, 255 , 0.9) ;
+    margin-right: 50px;
+    @media (max-width: 1020px) {
+        margin-right:0px;
+        width: 30%;
+    }
 `
 
 export default Contato;

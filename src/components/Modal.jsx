@@ -25,8 +25,7 @@ const DivPrincipal = styled.div`
   top: 0;
   width: 100%; 
   height: 100%;
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
+  overflow: auto;  
   background-color: #001b4467; 
   display: flex;
   justify-content: center;
@@ -35,6 +34,7 @@ const DivPrincipal = styled.div`
 const Content = styled.img`
     width: 60%; 
     border-radius: 15px;
+    border: 4px solid white;
 `
 const Close = styled.button`
     color: #aaa;

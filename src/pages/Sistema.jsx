@@ -116,7 +116,7 @@ const DivFooter = styled.footer`
 const DivCard = styled.div`
     grid-area:card;
     justify-self: center;
-    width: 40%;
+    width: 25%;
     height: 90%;
     border-radius: 10px;
     display: grid;
@@ -133,8 +133,8 @@ const Titulo = styled.h1`
     justify-self: center;
     color: #001B44;
     font-size: 50px;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 `
 const BemVindo = styled.h1`
     grid-area: bemvindo;

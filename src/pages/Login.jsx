@@ -102,6 +102,10 @@ const DivPrincipal = styled.div`
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    @media (max-width: 850px) {
+    background-image: none;
+    background-color: #dfdfdf ;
+  }
 `
 const DivHeader = styled.header`
     grid-area:header;
