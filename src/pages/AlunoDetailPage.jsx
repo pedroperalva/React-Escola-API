@@ -60,7 +60,7 @@ class AlunoDetailPage extends Component {
               </Button>
             </DivButtonBack>
             <DivInfos>
-              <Infos>Nome: <Span>{this.state.alunos?.mae}</Span></Infos>
+              <Infos>Nome: <Span>{this.state.alunos?.nome}</Span></Infos>
               <Infos>Mãe: <Span>{this.state.alunos?.mae}</Span></Infos>
               <Infos>Pai: <Span>{this.state.alunos?.pai}</Span></Infos>
               <Infos>Endereço: <Span>{this.state.alunos?.endereco}</Span></Infos>
