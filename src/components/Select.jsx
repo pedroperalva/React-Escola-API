@@ -15,7 +15,7 @@ class Select extends Component {
     }
 }
 const Selects = styled.select`
-    width: 30%;
+    width: 50%;
     height: 40px;
     justify-self: center;
     border: 2px solid #001B44;

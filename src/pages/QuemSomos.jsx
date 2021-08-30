@@ -91,7 +91,7 @@ const DivPrincipal = styled.div`
     grid-template-rows: 8rem auto 70px;
     grid-auto-rows: 150px;
     background-color: #dfdfdf ;
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
     background-color: #dfdfdf ;
   }
 `
@@ -115,6 +115,11 @@ const DivMain = styled.main`
     flex-direction:column;
     background-color: #dfdfdf ;
   }
+  @media (max-width: 850px) {
+    display:flex;
+    flex-direction:column;
+    background-color: #dfdfdf ;
+  }
 `
 const DivHeader = styled.header`
     grid-area:header;
@@ -127,7 +132,7 @@ const Titulo = styled.h1`
     text-align: center;
     color: #001B44;
     font-size: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     margin-top: 70px;
 `
 const DivMensagem = styled.div`

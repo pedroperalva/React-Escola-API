@@ -92,7 +92,7 @@ const Titulo = styled.h1`
     text-align: center;
     color: #001B44;
     font-size: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     margin-top: 70px;
     @media (max-width: 550px) {
         font-size: 30px;

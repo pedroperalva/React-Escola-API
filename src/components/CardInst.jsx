@@ -34,7 +34,7 @@ const DivCard = styled.div`
 `
 const Imagem = styled.img`
     width:70%;
-    height:80%;
+    height:100%;
     border-radius: 10px;
     box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 100%);
     @media (max-width: 860px) {

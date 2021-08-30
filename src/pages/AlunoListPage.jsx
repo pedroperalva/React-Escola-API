@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import HeaderSistema from '../components/HeaderSistema';
 import Footer from '../components/Footer';
 import BGIMG from '../img/bg-img3.jpg';
+import Button from '../components/Button';
+
 class AlunoListPage extends Component{
   constructor(props) {
     super(props)
@@ -39,9 +41,9 @@ class AlunoListPage extends Component{
                   <h1>Listagem de Alunos</h1>
               </div>
               <div className="button">
-                  <button onClick={() => this.props.history.push('/sistema')}>
+                  <Button onClick={() => this.props.history.push('/sistema')}>
                       Voltar
-                  </button>
+                  </Button>
               </div>
           </DivTitulo>
 
@@ -126,6 +128,7 @@ const DivTitulo = styled.div`
   .titulo {
     grid-area: "titulo";
     justify-self: center;
+    margin-top: 30px;
 
     h1 {
       text-align: center;
@@ -139,6 +142,8 @@ const DivTitulo = styled.div`
     grid-area: "button";
     justify-self: center;
     padding-bottom: 1.5em;
+    margin-bottom: 30px;
+    margin-top: 15px;
   }
 `
 const TableAlunos = styled.table`
@@ -148,6 +153,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   align-self: center;
   border-collapse: collapse;
   background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 100%);
   th {
     font-size: 1.5rem;
   }
@@ -161,6 +167,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   td {
     padding: 1em 0.5em;
     height: 2%;
+    color:#0955c7;
     
   }
   tr {
