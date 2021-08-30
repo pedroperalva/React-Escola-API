@@ -147,18 +147,19 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   height: auto;
   align-self: center;
   border-collapse: collapse;
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.9);
   th {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   th, td {
     text-align: center;
     border: 1px solid black;
     color: #001B44;
+    padding: 0.5em;
   }
   td {
-    padding: 1.5em 0.5em;
+    padding: 1em 0.5em;
     height: 2%;
     
   }
