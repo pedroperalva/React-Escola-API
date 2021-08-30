@@ -50,7 +50,7 @@ class AlunoListPage extends Component{
           dentro de um link que leva para a página de detalhes do aluno específico */}
           {this.state.alunos.map(aluno => (
           <DivCards>
-            <Link to={"/sistema-detail/" + aluno.emailresp} key={aluno.matricula}>
+            <Link style={{ textDecoration: 'none'}} to={"/sistema-detail/" + aluno.emailresp} key={aluno.matricula}>
               <Card>
                   <h4>Nome: {aluno.nome}</h4>
                   <p>Mãe: {aluno.mae}</p>
@@ -96,8 +96,8 @@ const DivHeader = styled.header`
   grid-area:header;
   `
 const DivMain = styled.main`
-  grid-area:content;
   display: flex;
+  grid-area:content;
   flex-direction: column;
 `
 const DivFooter = styled.footer`
@@ -133,10 +133,14 @@ const DivTitulo = styled.div`
 const DivCards = styled.div`
   display: flex;
   flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
   padding-left: 5%;
   padding-right: 5%;
+
 `
 const Card = styled.div`
+display: flex;
   max-width: 30%;
   min-height: 20%;
   flex-flow: column wrap;
