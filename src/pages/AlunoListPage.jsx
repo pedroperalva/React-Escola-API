@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import AlunosService from '../service/AlunosService'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-
+import HeaderSistema from '../components/HeaderSistema';
+import Footer from '../components/Footer';
+import BGIMG from '../img/bg-img3.jpg';
 class AlunoListPage extends Component{
   constructor(props) {
     super(props)
@@ -28,60 +29,144 @@ class AlunoListPage extends Component{
 
   render() {
     return (
-      <div className="container">
+      <DivPrincipal>
+        <DivHeader>
+          <HeaderSistema />
+        </DivHeader>
+        <DivMain>
+          <DivTitulo>
+              <div className="titulo">
+                  <h1>Listagem de Alunos</h1>
+              </div>
+              <div className="button">
+                  <button onClick={() => this.props.history.push('/sistema')}>
+                      Voltar
+                  </button>
+              </div>
+          </DivTitulo>
 
-        <section>
-            <div>
-                <h2>Alumos</h2>
-                <p>Listagem de Alunos</p>
-            </div>
-            <div>
-                <button onClick={() => this.props.history.push('/sistema-add')}>
-                    Adicionar
-                </button>
-            </div>
-        </section>
+          {/* Percorrendo o array de alunos do state e renderizando cada um
+          dentro de um link que leva para a página de detalhes do aluno específico */}
+          <TableAlunos>
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>Mãe</th>
+                <th>Pai</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
 
-        {/* Percorrendo o array de alunos do state e renderizando cada um
-        dentro de um link que leva para a página de detalhes do aluno específico */}
-        {this.state.alunos.map(aluno => (
-            <Link to={"/sistema-detail/" + aluno.emailresp} key={aluno.matricula}>
-                <CardsDiv>
-                    {/* <div>
-                        <img src={aluno.imageUrl}/>
-                    </div> */}
-                    <Card>
-                        <h4>{aluno.nome}</h4>
-                        <p>{aluno.mae}</p>
-                        <p>{aluno.pai}</p>
-                        <p>{aluno.endereco}</p>
-                        <p>{aluno.telefone}</p>
-                        <p>{aluno.emailresp}</p>
-                    </Card>
-                </CardsDiv>
-            </Link>
-        ))}
-
-      </div>
+              {this.state.alunos.map(aluno => (
+                  <tr onClick={() => this.props.history.push("/sistema-detail/" + aluno.emailresp)}>
+                      <td>{aluno.nome}</td>
+                      <td>{aluno.mae}</td>
+                      <td>{aluno.pai}</td>
+                      <td>{aluno.endereco}</td>
+                      <td>{aluno.telefone}</td>
+                      <td>{aluno.emailresp}</td>
+                  </tr>
+              ))}
+            </tbody>
+          </TableAlunos>
+        </DivMain>
+        <DivFooter>
+          <Footer />
+        </DivFooter>
+      </DivPrincipal>
     )
   }  
 }
 
-const CardsDiv = styled.div`
+
+const DivPrincipal = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  gap: 20px;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer ";
+  grid-template-columns: 1fr;
+  grid-template-rows: 8rem auto 70px;
+  grid-auto-rows: 150px;
+  background-image: url(${BGIMG});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  `
+const DivHeader = styled.header`
+  grid-area:header;
+  `
+const DivMain = styled.main`
   display: flex;
-  border: 1px solid #000000;
-  justify-content: center;
-  flex-flow: row wrap;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 16px;
+  grid-area:content;
+  flex-direction: column;
+  `
+const DivFooter = styled.footer`
+  grid-area:footer;
+  `
+
+const DivTitulo = styled.div`
+  display: grid;
+  width: 100%;
+  color: #001B44;
+  grid-template-areas:
+  "titulo"
+  "button"
+  ;
+
+  .titulo {
+    grid-area: "titulo";
+    justify-self: center;
+
+    h1 {
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 3em;
+      line-height: 1.5em;
+    }
+  }
+
+  > .button {
+    grid-area: "button";
+    justify-self: center;
+    padding-bottom: 1.5em;
+  }
 `
-const Card = styled.div`
-  display: flex;
-  width: 20%;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
+const TableAlunos = styled.table`
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 80%;
+  height: auto;
+  align-self: center;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.9);
+  th {
+    font-size: 1.5rem;
+  }
+
+  th, td {
+    text-align: center;
+    border: 1px solid black;
+    color: #001B44;
+    padding: 0.5em;
+  }
+  td {
+    padding: 1em 0.5em;
+    height: 2%;
+    
+  }
+  tr {
+    cursor: pointer;
+  }
+
 `
 
 export default AlunoListPage
