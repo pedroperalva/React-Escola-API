@@ -48,20 +48,31 @@ class AlunoListPage extends Component{
 
           {/* Percorrendo o array de alunos do state e renderizando cada um
           dentro de um link que leva para a página de detalhes do aluno específico */}
-          {this.state.alunos.map(aluno => (
-          <DivCards>
-            <Link style={{ textDecoration: 'none'}} to={"/sistema-detail/" + aluno.emailresp} key={aluno.matricula}>
-              <Card>
-                  <h4>Nome: {aluno.nome}</h4>
-                  <p>Mãe: {aluno.mae}</p>
-                  <p>Pai: {aluno.pai}</p>
-                  <p>Endereço: {aluno.endereco}</p>
-                  <p>Telefone: {aluno.telefone}</p>
-                  <p>Email responsável: {aluno.emailresp}</p>
-              </Card>
-            </Link>
-          </DivCards>
-          ))}
+          <TableAlunos>
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>Mãe</th>
+                <th>Pai</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {this.state.alunos.map(aluno => (
+                  <tr onClick={() => this.props.history.push("/sistema-detail/" + aluno.emailresp)}>
+                      <td>{aluno.nome}</td>
+                      <td>{aluno.mae}</td>
+                      <td>{aluno.pai}</td>
+                      <td>{aluno.endereco}</td>
+                      <td>{aluno.telefone}</td>
+                      <td>{aluno.emailresp}</td>
+                  </tr>
+              ))}
+            </tbody>
+          </TableAlunos>
         </DivMain>
         <DivFooter>
           <Footer />
@@ -112,14 +123,14 @@ const DivTitulo = styled.div`
   "button"
   ;
 
-  > .titulo {
+  .titulo {
     grid-area: "titulo";
     justify-self: center;
 
-    > h1 {
+    h1 {
       text-align: center;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 2em;
+      font-size: 3em;
       line-height: 1.5em;
     }
   }
@@ -130,20 +141,27 @@ const DivTitulo = styled.div`
     padding-bottom: 1.5em;
   }
 `
-const DivCards = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
+const TableAlunos = styled.table`
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 80%;
   height: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: center;
+  border-collapse: collapse;
+  th {
+    font-size: 2rem;
+  }
 
-`
-const Card = styled.div`
-display: flex;
-  max-width: 30%;
-  min-height: 20%;
-  flex-flow: column wrap;
+  th, td {
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid;
+  }
+  tr {
+    cursor: pointer;
+  }
+
 `
 
 export default AlunoListPage
