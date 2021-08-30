@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import AlunosService from '../service/AlunosService'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
 import HeaderSistema from '../components/HeaderSistema';
 import Footer from '../components/Footer';
 import BGIMG from '../img/bg-img3.jpg';
@@ -110,7 +109,7 @@ const DivMain = styled.main`
   display: flex;
   grid-area:content;
   flex-direction: column;
-`
+  `
 const DivFooter = styled.footer`
   grid-area:footer;
   `
@@ -118,6 +117,7 @@ const DivFooter = styled.footer`
 const DivTitulo = styled.div`
   display: grid;
   width: 100%;
+  color: #001B44;
   grid-template-areas:
   "titulo"
   "button"
@@ -144,19 +144,23 @@ const DivTitulo = styled.div`
 const TableAlunos = styled.table`
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 80%;
-  height: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
-  justify-content: center;
+  height: auto;
+  align-self: center;
   border-collapse: collapse;
+  opacity: 0.9;
   th {
     font-size: 2rem;
   }
 
   th, td {
     text-align: center;
-    line-height: 30px;
-    border: 1px solid;
+    border: 1px solid black;
+    color: #001B44;
+  }
+  td {
+    padding: 1.5em 0.5em;
+    height: 2%;
+    
   }
   tr {
     cursor: pointer;
