@@ -140,11 +140,6 @@ const Card = styled.div`
   max-width: 30%;
   min-height: 20%;
   flex-flow: column wrap;
-
-  >p, h4 {
-    display: inline;
-
-  }
 `
 
 export default AlunoListPage
