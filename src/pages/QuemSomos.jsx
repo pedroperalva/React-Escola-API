@@ -190,18 +190,21 @@ const TituloQuem = styled.h1`
 `
 const MensagemQuem = styled.p`
     color: #BADCF5;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
 `
 const Linha = styled.div`
-    width: 260px;
-    border: 1px solid #BADCF5;;
+    width: 26rem;
+    border: .1rem solid #BADCF5;;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 `
 const Imagem = styled.img`
     grid-area:imagem;
     justify-self: center;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
     @media (max-width: 1035px) {
         width: 60%;
   }

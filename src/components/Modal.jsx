@@ -34,11 +34,11 @@ const DivPrincipal = styled.div`
 `
 const Content = styled.img`
     width: 60%; 
-    border-radius: 15px;
+    border-radius: 1.5rem;
 `
 const Close = styled.button`
     color: #aaa;
-    font-size: 28px;
+    font-size: 2.8rem;
     font-weight: bold;
 `
 export default Modal;
