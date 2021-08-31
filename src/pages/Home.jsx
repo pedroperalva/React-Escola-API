@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Intro from '../components/Intro'
+import Sobre from '../components/Sobre';
+import Cards from '../components/Cards'
 
 class Home extends Component {
 
@@ -11,6 +14,11 @@ class Home extends Component {
                 <DivHeader>
                     <Header />
                 </DivHeader>
+                <DivContent>
+                    <Intro />
+                    <Sobre />
+                    <Cards />
+                </DivContent>
                 <DivFooter>
                     <Footer />
                 </DivFooter>
@@ -21,8 +29,6 @@ class Home extends Component {
 }
 const DivPrincipal = styled.div`
     display: grid;
-    grid-gap: 20px;
-    gap: 20px;
     width: 100%;
     min-height: 100vh;
     grid-template-areas:
@@ -35,6 +41,9 @@ const DivPrincipal = styled.div`
 `
 const DivHeader = styled.header`
     grid-area:header;
+`
+const DivContent = styled.main`
+    grid-area:content;
 `
 const DivFooter = styled.footer`
     grid-area:footer;
