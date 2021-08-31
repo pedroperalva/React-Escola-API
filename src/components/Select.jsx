@@ -19,7 +19,7 @@ const Selects = styled.select`
     height: 40px;
     justify-self: center;
     border: 2px solid #001B44;
-
+    font-size: 18px;
     
 `
 const Options = styled.option`

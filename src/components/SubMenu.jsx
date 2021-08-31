@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import Logo from '../img/logo1.png';
+
 
 const SubMenu = () => {
 
     return(
         <Nav>
             <div>
-                <Ul>
-                    <Imagem src={Logo}></Imagem>
-                </Ul>
+                <Logo>Resilinha</Logo>
             </div>   
             <div>
                 <Ul>
@@ -22,8 +20,11 @@ const SubMenu = () => {
 }
 
 const Nav = styled.nav`
+    margin-left: 5%;
+    margin-right: 5%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 1.6rem;
 `
 const Ul = styled.ul`
@@ -42,9 +43,12 @@ const StyledNavLink = styled(NavLink)`
         color: #0097E0
     }
 `
-const Imagem = styled.img`
-    justify-self: center;
-    width:8rem;
-    height:7rem;
+const Logo = styled.h1`
+    font-weight: 700;
+    font-size: 2.4rem;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: #BADCF5;
 `
 export default SubMenu;

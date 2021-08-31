@@ -120,6 +120,7 @@ const DivTitulo = styled.div`
   display: grid;
   width: 100%;
   color: #001B44;
+  font-size: 1.8rem;
   grid-template-areas:
   "titulo"
   "button"
@@ -152,10 +153,10 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   height: auto;
   align-self: center;
   border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
   box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 100%);
   th {
-    font-size: 1.5rem;
+    font-size: 2.0rem;
   }
 
   th, td {
@@ -168,6 +169,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 1em 0.5em;
     height: 2%;
     color:#0955c7;
+    font-size: 1.6rem;
     
   }
   tr {
@@ -176,4 +178,4 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 `
 
-export default AlunoListPage
+export default AlunoListPage;
