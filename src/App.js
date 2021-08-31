@@ -11,6 +11,8 @@ import AlunoDetailPage from "./pages/AlunoDetailPage";
 import AlunoEditPage from "./pages/AlunoEditPage";
 import AlunoListPage from "./pages/AlunoListPage";
 
+// import Intro from './components/Intro'
+
 class App extends Component {
   render() {
     return (
@@ -29,6 +31,7 @@ class App extends Component {
             <Route path="/sistema-edit/:emailresp" component={AlunoEditPage} />
           </Switch>
         </Router>
+        {/* <Intro /> */}
       </div>
     );
   }

@@ -13,7 +13,16 @@ class Header extends Component {
 
 }
 const Cabecalho = styled.header`
-    height: 8rem;
-    background-color: #001B44;
+    font-family: 'DM Sans', sans-serif;
+    margin: auto;
+
+  height: 8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #001B44;
+
 `
 export default Header;
