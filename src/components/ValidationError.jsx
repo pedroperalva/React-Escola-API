@@ -16,8 +16,10 @@ class ValidationError extends Component{
 const Content = styled.div`
     color:red;
     margin-bottom: 10px;
+    text-align: start;
 `
 const ErrorMessage = styled.li`
     margin:10px;
+    font-size: 1.4rem;
 `
 export default ValidationError;

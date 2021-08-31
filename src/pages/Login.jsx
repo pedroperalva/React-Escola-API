@@ -6,7 +6,6 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import BgPhoto from '../img/img5.png';
 import ValidationError from '../components/ValidationError';
-import Logo from '../img/logo1.png';
 
 class Login extends Component {
     
@@ -59,7 +58,7 @@ class Login extends Component {
                 </DivHeader>
                 <DivMain>
                     <Form onSubmit={this.handleSubmit}>
-                        <Imagem src={Logo}></Imagem>
+                        <Titulo>Portal do Educador</Titulo>
                         <Input value={this.state.formValues.email} type={'text'} name={'email'} onChangeValue={this.handleChangeInput}>Email:</Input>
                         <Input value={this.state.formValues.senha} type={'password'} name={'senha'} onChangeValue={this.handleChangeInput}>Senha:</Input>
                         <ValidationError error={this.state.errors}/>
@@ -126,11 +125,10 @@ const DivMain = styled.main`
 const DivFooter = styled.footer`
     grid-area:footer;
 `
-const Imagem = styled.img`
-    width:8rem;
-    height:7rem;
-    margin-bottom: 15px;
-    border-radius: 15px;
+const Titulo = styled.h1`
+    font-size:4.0rem;
+    margin-bottom: 50px;
+    text-align: center;
 `
 const Form = styled.form`
     grid-area:main;
