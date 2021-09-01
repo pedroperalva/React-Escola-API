@@ -38,7 +38,7 @@ const Content = styled.img`
 `
 const Close = styled.button`
     color: #aaa;
-    font-size: 28px;
+    font-size: 2.8rem;
     font-weight: bold;
 `
 export default Modal;

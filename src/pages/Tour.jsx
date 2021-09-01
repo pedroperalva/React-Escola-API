@@ -36,7 +36,7 @@ class Tour extends Component {
 const animationFrame = keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateX(-3rem);
     }
     100% {
       opacity: 1;
@@ -45,8 +45,8 @@ const animationFrame = keyframes`
 `
 const DivPrincipal = styled.div`
     display: grid;
-    grid-gap: 20px;
-    gap: 20px;
+    grid-gap: 2rem;
+    gap: 2rem;
     width: 100%;
     min-height: 100vh;
     grid-template-areas:
@@ -54,8 +54,8 @@ const DivPrincipal = styled.div`
         "content"
         "footer ";
     grid-template-columns: 1fr;
-    grid-template-rows: 8rem auto 70px;
-    grid-auto-rows: 150px;
+    grid-template-rows: 8rem auto 7rem;
+    grid-auto-rows: 15rem;
     background-image: url(${BgPhoto});
     background-position: center;
     background-repeat: no-repeat;
@@ -75,17 +75,17 @@ const DivMain = styled.main`
         "main1 main2"
         "main3 main4"
         "main5 main6";
-    grid-gap:20px;
+    grid-gap:2rem;
     animation: ${animationFrame} 1.5s;
     justify-content: center;
-    @media (max-width: 860px) {
+    @media (max-width: 86rem) {
     display:flex;
     flex-direction: column;
   }
 `
 const DivFooter = styled.footer`
     grid-area:footer;
-    margin-top: 50px;
+    margin-top: 5rem;
 `
 const Titulo = styled.h1`
     grid-area:titulo;

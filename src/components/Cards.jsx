@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Certificado from '../img/certificate.png'
+
 
 class Cards extends Component {
   render() {
@@ -10,38 +10,15 @@ class Cards extends Component {
           <Card>
             <Circle>
               <Icon
-                src={Certificado}
-                alt="certificate"
+                src={this.props.imagem}
+                alt="certificado"
               />
             </Circle>
 
-            <h2>{this.props.subtitle}</h2>
-            <p style={{ maxWidth: "90%" }}>{this.props.p}</p>
+            <Subtitulo>{this.props.subtitle}</Subtitulo>
+            <Texto style={{ maxWidth: "90%" }}>{this.props.p}</Texto>
           </Card>
 
-          <Card>
-            <Circle>
-              <Icon
-                src={Certificado}
-                alt="certificate"
-              />
-            </Circle>
-
-            <h2>{this.props.subtitle}</h2>
-            <p style={{ maxWidth: "90%" }}>{this.props.p}</p>
-          </Card>
-
-          <Card>
-            <Circle>
-              <Icon
-                src={Certificado}
-                alt="certificate"
-              />
-            </Circle>
-
-            <h2>{this.props.subtitle}</h2>
-            <p style={{ maxWidth: "90%" }}>{this.props.p}</p>
-          </Card>
         </Section>
       </>
     );
@@ -50,31 +27,30 @@ class Cards extends Component {
 
 const Section = styled.section `
     background-color: #001B44;
-
+    height: 70rem;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 `
 
 const Card = styled.div `
-    height: 400px;
-    width: 300px;
-    border-radius: 3px;
+    height: 40rem;
+    width: 30rem;
+    border-radius: .3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
-    margin: 30px;
+    box-shadow: .1rem .2rem .5rem rgba(0, 0, 0, 0.5);
+    margin: 3rem;
   
-    background-color: rgba(225, 245, 235, 0.5);
-    border: 1px solid transparent;
-    border-image: linear-gradient(0deg, yellow, red, blue);
-    border-image-slice: 1;
+    background-color: #dfdfdf;
+    box-shadow: .1rem .1rem .5rem black;
 `
 
 const Circle = styled.div `
-    height: 150px;
-    width: 150px;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
     background: #00accb;
     margin: 30px 0;
@@ -82,12 +58,24 @@ const Circle = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
+
 `
 
 const Icon = styled.img `
-    height: 9rem; 
-    width: 9rem;
-    align-self: center;
+    height: 8rem; 
+    width: 8rem;
+
+`
+
+const Subtitulo = styled.h2 `
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+    text-align: center;
+`
+
+const Texto = styled.p `
+    font-size: 1.4rem;
+    text-align: center;
 `
 
 export default Cards;

@@ -44,6 +44,7 @@ const SobreNosTitulo = styled.h1 `
     font-size: 4.6rem;
     text-align: center;
     margin-bottom: 7rem;
+    color: #001B44;
 `
 
 const SobreNos = styled.p `

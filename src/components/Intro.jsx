@@ -32,6 +32,7 @@ class Intro extends Component {
 }
 const Section = styled.section `
     position: relative;
+    margin-bottom: 5rem;
 `
 
 const Content = styled.div `
@@ -47,20 +48,21 @@ const ImgIntro = styled.img`
 `;
 
 const Title = styled.h1 `
-    font-size: 5rem;
+    font-size: 6.4rem;
     color: #dfdfdf;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
-    text-shadow: 1px 0px 2px black;
+    text-shadow: .1rem 0 .2rem black;
 `
 
 const P = styled.p `
     font-size: 2.8rem;
     color: #dfdfdf;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     font-style: italic;
+    line-height: 3.2rem;
 
-    text-shadow: 1px 0px 2px black;
+    text-shadow: .1rem 0 .2rem black;
 `
 
 const Button = styled.button `
