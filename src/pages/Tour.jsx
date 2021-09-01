@@ -91,11 +91,11 @@ const Titulo = styled.h1`
     grid-area:titulo;
     text-align: center;
     color: #001B44;
-    font-size: 5rem;
-    margin-bottom: 5rem;
-    margin-top: 7rem;
-    @media (max-width: 55rem) {
-        font-size: 3rem;
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    @media (max-width: 550px) {
+        font-size: 30px;
   }
 `
 

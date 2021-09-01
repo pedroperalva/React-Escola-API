@@ -34,7 +34,7 @@ const DivPrincipal = styled.div`
 `
 const Content = styled.img`
     width: 60%; 
-    border-radius: 1.5rem;
+    border-radius: 15px;
 `
 const Close = styled.button`
     color: #aaa;
