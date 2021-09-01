@@ -1,6 +1,6 @@
 ## Para ver e utilizar o site acesse o link: 
 
-(https://quizzical-curie-6ab101.netlify.app).
+https://quizzical-curie-6ab101.netlify.app
 
 ## Para acessar a página Portal do Educador utilize:
 
