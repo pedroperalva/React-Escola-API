@@ -20,11 +20,11 @@ class Tour extends Component {
                 </DivHeader>
                 <DivMain>
                     <Titulo>Nossas Instalações</Titulo>
-                    <CardInst style={{gridArea:'main1'}} src={Inst1}></CardInst>
-                    <CardInst style={{gridArea:'main2'}} src={Inst2}></CardInst>
-                    <CardInst style={{gridArea:'main3'}} src={Inst3}></CardInst>
-                    <CardInst style={{gridArea:'main4'}} src={Inst4}></CardInst>
-                    <CardInst style={{gridArea:'main5'}} src={Inst5}></CardInst>
+                    <CardInst style={{ gridArea: 'main1' }} src={Inst1}></CardInst>
+                    <CardInst style={{ gridArea: 'main2' }} src={Inst2}></CardInst>
+                    <CardInst style={{ gridArea: 'main3' }} src={Inst3}></CardInst>
+                    <CardInst style={{ gridArea: 'main4' }} src={Inst4}></CardInst>
+                    <CardInst style={{ gridArea: 'main5' }} src={Inst5}></CardInst>
                 </DivMain>
                 <DivFooter>
                     <Footer />
@@ -36,11 +36,11 @@ class Tour extends Component {
 const animationFrame = keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-3rem);
+      transform: translateY(-30px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 `
 const DivPrincipal = styled.div`
@@ -63,9 +63,15 @@ const DivPrincipal = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     justify-content: center;
+    @media (max-width: 860px) {
+    background-image: none;
+    background-color: #dfdfdf ;
+    background-size: auto;
+  }
 `
 const DivHeader = styled.header`
     grid-area:header;
+    width: 100%;
 `
 const DivMain = styled.main`
     grid-area:content;
@@ -78,7 +84,7 @@ const DivMain = styled.main`
     grid-gap:2rem;
     animation: ${animationFrame} 1.5s;
     justify-content: center;
-    @media (max-width: 86rem) {
+    @media (max-width: 860px) {
     display:flex;
     flex-direction: column;
   }
@@ -86,6 +92,7 @@ const DivMain = styled.main`
 const DivFooter = styled.footer`
     grid-area:footer;
     margin-top: 5rem;
+    width: 100%;
 `
 const Titulo = styled.h1`
     grid-area:titulo;

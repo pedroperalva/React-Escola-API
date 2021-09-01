@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import AlunosService from '../service/AlunosService'
 import styled from 'styled-components'
 import HeaderSistema from '../components/HeaderSistema';
@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import BGIMG from '../img/bg-img3.jpg';
 import Button from '../components/Button';
 
-class AlunoListPage extends Component{
+class AlunoListPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -20,10 +20,10 @@ class AlunoListPage extends Component{
   async loadAlunos() {
     try {
       let res = await AlunosService.listAlunos()
-      
-      this.setState({alunos: res.data.resultado})
+
+      this.setState({ alunos: res.data.resultado })
     }
-    catch(error) {
+    catch (error) {
       console.log(error)
       alert("Não foi possível carregar os alunos cadastrados.")
     }
@@ -37,14 +37,14 @@ class AlunoListPage extends Component{
         </DivHeader>
         <DivMain>
           <DivTitulo>
-              <div className="titulo">
-                  <h1>Listagem de Alunos</h1>
-              </div>
-              <div className="button">
-                  <Button onClick={() => this.props.history.push('/sistema')}>
-                      Voltar
-                  </Button>
-              </div>
+            <div className="titulo">
+              <h1>Listagem de Alunos</h1>
+            </div>
+            <div className="button">
+              <Button onClick={() => this.props.history.push('/sistema')}>
+                Voltar
+              </Button>
+            </div>
           </DivTitulo>
 
           {/* Percorrendo o array de alunos do state e renderizando cada um
@@ -63,14 +63,14 @@ class AlunoListPage extends Component{
             <tbody>
 
               {this.state.alunos.map(aluno => (
-                  <tr onClick={() => this.props.history.push("/sistema-detail/" + aluno.emailresp)}>
-                      <td>{aluno.nome}</td>
-                      <td>{aluno.mae}</td>
-                      <td>{aluno.pai}</td>
-                      <td>{aluno.endereco}</td>
-                      <td>{aluno.telefone}</td>
-                      <td>{aluno.emailresp}</td>
-                  </tr>
+                <tr onClick={() => this.props.history.push("/sistema-detail/" + aluno.emailresp)}>
+                  <td>{aluno.nome}</td>
+                  <td>{aluno.mae}</td>
+                  <td>{aluno.pai}</td>
+                  <td>{aluno.endereco}</td>
+                  <td>{aluno.telefone}</td>
+                  <td>{aluno.emailresp}</td>
+                </tr>
               ))}
             </tbody>
           </TableAlunos>
@@ -80,7 +80,7 @@ class AlunoListPage extends Component{
         </DivFooter>
       </DivPrincipal>
     )
-  }  
+  }
 }
 
 

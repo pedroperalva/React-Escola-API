@@ -52,8 +52,8 @@ class AlunoDetailPage extends Component {
         </DivHeader>
         <DivMain>
           <DivCard>
-              <Titulo>Aluno</Titulo>
-              <Descr>Detalhes do aluno</Descr>
+            <Titulo>Aluno</Titulo>
+            <Descr>Detalhes do aluno</Descr>
             <DivButtonBack>
               <Button onClick={() => this.props.history.goBack()}>
                 Voltar

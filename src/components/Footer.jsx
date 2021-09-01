@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import { TiSocialLinkedin, TiSocialTwitter, TiSocialYoutube, TiSocialInstagram } from 'react-icons/ti'
 
 class Footer extends Component {
-    render() { 
+    render() {
         return (
             <Rodape>
                 <Icones>
-                    <TiSocialInstagram size="30" color="#f1f1f1"/>
-                    <TiSocialYoutube size="30" color="#f1f1f1"/>
-                    <TiSocialTwitter size="30" color="#f1f1f1"/>
-                    <TiSocialLinkedin size="30" color="#f1f1f1"/>
+                    <TiSocialInstagram size="30" color="#f1f1f1" />
+                    <TiSocialYoutube size="30" color="#f1f1f1" />
+                    <TiSocialTwitter size="30" color="#f1f1f1" />
+                    <TiSocialLinkedin size="30" color="#f1f1f1" />
                 </Icones>
                 <Copy>&copy; 2021 - Resilientes T5</Copy>
             </Rodape>
@@ -25,6 +25,7 @@ const Rodape = styled.footer`
     justify-content: space-evenly;
     flex-direction: column;
     margin-bottom: .5rem;
+    width: 100%;
 `
 
 const Icones = styled.div`

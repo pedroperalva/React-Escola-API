@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-class Button extends Component{
+class Button extends Component {
 
-    render(){
-        return(
+    render() {
+        return (
             <DivButton>
-            <Botao onClick={this.props.onClick} style={this.props.style} type="submit">
-                {this.props.children}
-            </Botao>
+                <Botao onClick={this.props.onClick} style={this.props.style} type="submit">
+                    {this.props.children}
+                </Botao>
             </DivButton>
         )
     }

@@ -3,10 +3,10 @@ import Menu from './Menu'
 import styled from 'styled-components'
 
 class Header extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <Cabecalho>
-                <Menu />     
+                <Menu />
             </Cabecalho>
         )
     }
@@ -15,14 +15,11 @@ class Header extends Component {
 const Cabecalho = styled.header`
     font-family: 'DM Sans', sans-serif;
     margin: auto;
-
-  height: 8rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #001B44;
-
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001B44;
+    width: 100%;
 `
 export default Header;

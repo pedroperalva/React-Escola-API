@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Modal from './Modal';
 
-class CardInst extends Component{
+class CardInst extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.state = {
-            show:false
+            show: false
         }
     }
 
-    showModal = ()=>{
-        this.setState({show:!this.state.show})
+    showModal = () => {
+        this.setState({ show: !this.state.show })
     }
-    render(){
-        return(
+    render() {
+        return (
             <DivCard style={this.props.style}>
-            <Imagem src={this.props.src} onClick={this.showModal}></Imagem>
-            <Modal onClose={this.showModal} show={this.state.show} src={this.props.src}></Modal>
+                <Imagem src={this.props.src} onClick={this.showModal}></Imagem>
+                <Modal onClose={this.showModal} show={this.state.show} src={this.props.src}></Modal>
             </DivCard>
-            
+
         )
     }
 }
@@ -39,9 +39,6 @@ const Imagem = styled.img`
     box-shadow: 0px 0px 24px -2px rgb(0 0 0 / 100%);
     @media (max-width: 860px) {
         width:50%;
-    }
-    @media (max-width: 600px) {
-        width:30%;
     }
 `
 export default CardInst;

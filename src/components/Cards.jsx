@@ -25,7 +25,7 @@ class Cards extends Component {
   }
 }
 
-const Section = styled.section `
+const Section = styled.section`
     background-color: #001B44;
     height: 70rem;
     display: flex;
@@ -33,7 +33,7 @@ const Section = styled.section `
     justify-content: space-around;
 `
 
-const Card = styled.div `
+const Card = styled.div`
     height: 40rem;
     width: 30rem;
     border-radius: .3rem;
@@ -48,7 +48,7 @@ const Card = styled.div `
     box-shadow: .1rem .1rem .5rem black;
 `
 
-const Circle = styled.div `
+const Circle = styled.div`
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
@@ -61,19 +61,19 @@ const Circle = styled.div `
 
 `
 
-const Icon = styled.img `
+const Icon = styled.img`
     height: 8rem; 
     width: 8rem;
 
 `
 
-const Subtitulo = styled.h2 `
+const Subtitulo = styled.h2`
     font-size: 2.4rem;
     margin-bottom: 3rem;
     text-align: center;
 `
 
-const Texto = styled.p `
+const Texto = styled.p`
     font-size: 1.4rem;
     text-align: center;
 `
