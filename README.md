@@ -1,3 +1,5 @@
+# API Escola Resilinha
+
 ## Descrição do projeto:
 
 Nesse projeto fizemos um site de uma escola infantil, utilizando React.JS e integramos um sistema de acesso de funcionários com uma API Restul desenvolvida por nós com Node.JS e Sqlite3, onde é possível adicionar, editar, deletar e acessar o banco de dados de alunos da escola. O projeto foi feito com Class Components e Styled Components para estilização.
