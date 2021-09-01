@@ -10,8 +10,10 @@ class Intro extends Component {
         <Content>
           <Title>Resilinha</Title>
           <P>
-            Algo sobre o ensino na Resilinha, <br /> bota um texto qualquer pq
-            to sem criatividade <br /> boa sorte!...
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/> 
+          Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.<br/> 
+          Augue neque gravida in fermentum et.
           </P>
           <Button>Matricule-se</Button>
         </Content>
@@ -30,12 +32,12 @@ class Intro extends Component {
     );
   }
 }
-const Section = styled.section `
+const Section = styled.section`
     position: relative;
     margin-bottom: 5rem;
 `
 
-const Content = styled.div `
+const Content = styled.div`
     position: absolute;
     top: 8rem;
     left: 6.9rem;
@@ -47,25 +49,30 @@ const ImgIntro = styled.img`
   filter: brightness(20%);
 `;
 
-const Title = styled.h1 `
+const Title = styled.h1`
     font-size: 6.4rem;
     color: #dfdfdf;
     margin-bottom: 1.5rem;
     font-weight: 700;
     text-shadow: .1rem 0 .2rem black;
+    @media (max-width: 1200px) {
+      font-size: 4.0rem;
+    }
 `
 
-const P = styled.p `
+const P = styled.p`
     font-size: 2.8rem;
     color: #dfdfdf;
     margin-bottom: 5rem;
     font-style: italic;
     line-height: 3.2rem;
-
     text-shadow: .1rem 0 .2rem black;
+    @media (max-width: 1200px) {
+      font-size: 1.7rem;
+    }
 `
 
-const Button = styled.button `
+const Button = styled.button`
     border: .2rem solid #6ec3f5;
     background: transparent;
     padding: 2rem 6rem;
@@ -77,7 +84,6 @@ const Button = styled.button `
     transition: .2s ease-in-out;
     letter-spacing: 2px;
     cursor: pointer;
-
     &:hover {
         color: #0097E0;
         border-color: #0097E0;
@@ -85,7 +91,7 @@ const Button = styled.button `
     }
 `
 
-const Wave = styled.svg `
+const Wave = styled.svg`
     position: absolute;
     bottom: 0;
     left: 0;

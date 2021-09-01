@@ -15,7 +15,7 @@ class Sistema extends Component {
         this.state = {
             show: true,
             change: 'first',
-            value:'',
+            value: '',
             email: '',
         }
     }
@@ -37,9 +37,9 @@ class Sistema extends Component {
     handleChangeInput = (e) => {
         this.setState({ value: e.target.value })
     }
-    getAluno = (e) =>{
+    getAluno = (e) => {
         e.preventDefault()
-        this.setState({email: e.target.value})
+        this.setState({ email: e.target.value })
         this.props.history.push(`/sistema-detail/${this.state.email}`)
 
     }
@@ -60,8 +60,8 @@ class Sistema extends Component {
                             <div></div>
                         ) : (
                             <DivInvisivel>
-                                <Form onChange={(e) => this.setState({email: e.target.value})}>
-                                    <Input onChange={this.handleChangeInput} placeholder={'Insira o e-mail'} value= {this.state.email}style={{ width: '300px', borderRadius: '0px' }}></Input>
+                                <Form onChange={(e) => this.setState({ email: e.target.value })}>
+                                    <Input onChange={this.handleChangeInput} placeholder={'Insira o e-mail'} value={this.state.email} style={{ width: '300px', borderRadius: '0px' }}></Input>
                                     <Button onClick={this.getAluno}>Buscar</Button>
                                 </Form>
                             </DivInvisivel>

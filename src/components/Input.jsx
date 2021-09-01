@@ -8,7 +8,7 @@ class Input extends Component {
             <Container>
                 <Label>{this.props.children}</Label>
                 <InputArea style={this.props.style} placeholder={this.props.placeholder} value={this.props.value}
-                onChange={this.props.onChangeValue} ref={this.props.ref} name={this.props.name} type={this.props.type} />
+                    onChange={this.props.onChangeValue} ref={this.props.ref} name={this.props.name} type={this.props.type} />
             </Container>
         );
     }

@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 
 const SubMenu = () => {
 
-    return(
+    return (
         <Nav>
             <div>
                 <Logo>Resilinha</Logo>
-            </div>   
+            </div>
             <div>
                 <Ul>
                     <StyledNavLink to="/">Sair</StyledNavLink>

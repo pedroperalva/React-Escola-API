@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-// import Logo from '../img/logo1.png';
 import PortalLogin from '../img/user.png'
 
 class Menu extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <Nav>
                 <div>
-                    <Logo>Resilinha</Logo>
+                    <StyledNavLogo to="/">Resilinha</StyledNavLogo>
                 </div>
                 <div>
                     <Ul>
@@ -17,7 +16,7 @@ class Menu extends Component {
                         <StyledNavLink to="/QuemSomos">Quem Somos?</StyledNavLink>
                         <StyledNavLink to="/Tour">Nossas Instalações</StyledNavLink>
                         <StyledNavLink to="/Contato">Contato</StyledNavLink>
-                        <StyledNavLink to="/Login"><img src={PortalLogin} alt="Login Portal" style={{height: '3rem', width: '3rem'}} /></StyledNavLink>
+                        <StyledNavLink to="/Login"><img src={PortalLogin} alt="Login Portal" style={{ height: '3rem', width: '3rem' }} /></StyledNavLink>
                     </Ul>
                 </div>
             </Nav>
@@ -35,7 +34,6 @@ const Ul = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     list-style: none;
 `
 const StyledNavLink = styled(NavLink)`
@@ -48,19 +46,20 @@ const StyledNavLink = styled(NavLink)`
     &:hover {
         color: #0097E0
     }
+    @media (max-width: 800px) {
+      font-size: 0.7rem;
+    }
 `
-const Imagem = styled.img`
-    justify-self: center;
-    width:8rem;
-    height:7rem;
-`
-
-const Logo = styled.h1`
+const StyledNavLogo = styled(NavLink)`
+    text-decoration: none;
     font-weight: 700;
     font-size: 2.4rem;
     letter-spacing: .4rem;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
     color: #BADCF5;
+    @media (max-width: 800px) {
+      font-size: 1.2rem;
+    }
 `
 export default Menu;

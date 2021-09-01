@@ -100,11 +100,11 @@ class Contato extends Component {
 const animationFrame = keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateY(-30px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 `
 const DivPrincipal = styled.div`
@@ -133,10 +133,12 @@ const DivPrincipal = styled.div`
 `
 const DivHeader = styled.header`
     grid-area:header;
+    width: 100%;
 `
 const DivFooter = styled.footer`
     grid-area:footer;
     margin-top: 50px;
+    width: 100%;
 `
 const DivMain = styled.main`
     grid-area:content;
@@ -160,6 +162,7 @@ const Titulo = styled.h1`
     font-size: 50px;
     margin-bottom: 50px;
     margin-top: 70px;
+    justify-self: center;
 `
 const Imagem = styled.img`
     grid-area:main1;
@@ -177,10 +180,14 @@ const Form = styled.form`
     border-radius: 10px;
     padding: 30px;
     color: #001B44;
+    justify-self: center;
     background-color: rgba(255, 255, 255 , 0.9) ;
     margin-right: 50px;
     @media (max-width: 1020px) {
         margin-right:0px;
+        width: 60%;
+    }
+    @media (max-width: 415px) {
         width: 30%;
     }
 `

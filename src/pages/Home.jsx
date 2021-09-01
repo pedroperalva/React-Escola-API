@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Intro from "../components/Intro";
@@ -23,20 +23,22 @@ class Home extends Component {
             <Cards
               imagem={Certificado}
               subtitle="Ensino de qualidade"
-              p="Ensino de qualidade em uma das melhores escolas primarias do país.
-              Escola premiada 6 vezes seguidas como top ensino infantil."
+              p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Integer vitae justo eget magna fermentum iaculis eu non diam."
             />
             <Cards
               imagem={Foguete}
               subtitle="Evolução constante"
-              p="Ensino de qualidade em uma das melhores escolas primarias do país.
-              Escola premiada 6 vezes seguidas como top ensino infantil."
+              p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
             <Cards
               imagem={Livro}
               subtitle="Biblioteca aberta"
-              p="Ensino de qualidade em uma das melhores escolas primarias do país.
-            Escola premiada 6 vezes seguidas como top ensino infantil."
+              p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Massa massa ultricies mi quis hendrerit dolor magna eget."
             />
           </DivCards>
         </DivContent>
@@ -47,6 +49,16 @@ class Home extends Component {
     );
   }
 }
+const animationFrame = keyframes`
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+`
 const DivPrincipal = styled.div`
   display: grid;
   width: 100%;
@@ -65,6 +77,10 @@ const DivCards = styled.div `
     display: flex;
     justify-content: space-around;
     align-items: center;
+    animation: ${animationFrame} 1.5s;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+    }
 `
 
 const DivHeader = styled.header`
@@ -72,6 +88,7 @@ const DivHeader = styled.header`
 `;
 const DivContent = styled.main`
   grid-area: content;
+  animation: ${animationFrame} 1.5s;
 `;
 const DivFooter = styled.footer`
   grid-area: footer;

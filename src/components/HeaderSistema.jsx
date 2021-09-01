@@ -4,9 +4,9 @@ import styled from 'styled-components'
 
 const HeaderSistema = () => {
 
-    return(
+    return (
         <Cabecalho>
-            <SubMenu />     
+            <SubMenu />
         </Cabecalho>
     )
 }

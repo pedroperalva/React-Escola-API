@@ -16,13 +16,23 @@ class QuemSomos extends Component {
                     <Titulo>Quem Somos</Titulo>
                     <DivMensagem>
                         <Mensagem>
-                            No ano de 2021, 4 amigos, Pedro Peralva, Sâmela Barbosa, Italo Nascimento e Cristiano Kituxi
-                            sentiram que os pais não contavam, no Rio de Janeiro, com um lugar confortável,
-                            seguro e com pessoas preparadas para educar e cuidar dos primeiros anos de vida de seus filhos.<br></br><br></br>
-                            Decidiu-se então investirem na ideia e, em fevereiro de 2021, abriram a escola Resilinha.<br></br><br></br>
-                            Com uma proposta diferenciada, que visa o desenvolvimento da criança por meio de seu autoconhecimento,
-                            não demorou muito para que o nome Resilinha começasse a aparecer com destaque entre as instituições
-                            de educação infantil.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Mi quis hendrerit dolor magna eget est lorem. Nulla aliquet enim tortor at. 
+                        Suscipit adipiscing bibendum est ultricies integer quis auctor. 
+                        Scelerisque fermentum dui faucibus in ornare quam. Pretium nibh ipsum consequat nisl. 
+                        Ultrices in iaculis nunc sed augue lacus viverra vitae. 
+                        Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. 
+                        Sed cras ornare arcu dui vivamus arcu felis bibendum ut. 
+                        Ultrices mi tempus imperdiet nulla malesuada. Ut aliquam purus sit amet luctus. 
+                        Quam viverra orci sagittis eu volutpat odio facilisis mauris sit.<br></br><br></br>
+                        Quam lacus suspendisse faucibus interdum posuere lorem. 
+                        Consectetur a erat nam at lectus urna duis. 
+                        Viverra suspendisse potenti nullam ac tortor. Cras fermentum odio eu feugiat. 
+                        Enim nulla aliquet porttitor lacus luctus accumsan tortor. 
+                        Pellentesque habitant morbi tristique senectus et. Consequat ac felis donec et odio pellentesque diam. 
+                        Elit pellentesque habitant morbi tristique senectus et. Enim nulla aliquet porttitor lacus. 
+                        Vitae proin sagittis nisl rhoncus mattis. In fermentum et sollicitudin ac orci phasellus egestas tellus.
                         </Mensagem>
 
                         <Imagem src={img1} />
@@ -58,7 +68,7 @@ class QuemSomos extends Component {
                             procuramos seguir os pensadores que nos ajudam a refletir sobre o dia a dia na escola
                         </MensagemQuem>
                     </DivValores>
-                  
+
                 </DivMain>
                 <DivFooter>
                     <Footer />
@@ -70,11 +80,11 @@ class QuemSomos extends Component {
 const animationFrame = keyframes`
     0% {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateY(-30px);
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 `
 const DivPrincipal = styled.div`
@@ -114,6 +124,7 @@ const DivMain = styled.main`
     display:flex;
     flex-direction:column;
     background-color: #dfdfdf ;
+    background-size: auto;
   }
   @media (max-width: 850px) {
     display:flex;
@@ -123,9 +134,11 @@ const DivMain = styled.main`
 `
 const DivHeader = styled.header`
     grid-area:header;
+    width: 100%;
 `
 const DivFooter = styled.footer`
     grid-area:footer;
+    width: 100%;
 `
 const Titulo = styled.h1`
     grid-area:titulo;
@@ -147,6 +160,9 @@ const DivMensagem = styled.div`
         'texto'
         'imagem';
     margin-bottom: 200px;
+    @media (max-width: 1000px) {
+        height: 800px;
+    }
 `
 const Mensagem = styled.p`
     font-size: 20px;
@@ -212,6 +228,9 @@ const Imagem = styled.img`
     margin-top: 10rem;
     @media (max-width: 1035px) {
         width: 60%;
-  }
+    }
+    @media (max-width: 1000px) {
+        display: none;
+    }
 `
 export default QuemSomos;

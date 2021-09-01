@@ -13,7 +13,7 @@ class Modal extends React.Component {
         return (
             <DivPrincipal>
                 <Content src={this.props.src}></Content>
-                <Close onClick={this.onClose}>x</Close> 
+                <Close onClick={this.onClose}>x</Close>
             </DivPrincipal>
         );
     }
