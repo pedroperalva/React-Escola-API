@@ -1,8 +1,10 @@
-## Para ver e utilizar o site acesse o link: (https://quizzical-curie-6ab101.netlify.app).
+## Para ver e utilizar o site acesse o link: 
+
+(https://quizzical-curie-6ab101.netlify.app).
 
 ## Para acessar a página Portal do Educador utilize:
 
-### Login: taiscunha@gmail.com Senha: 123456789
+Login: taiscunha@gmail.com Senha: 123456789
 
 ## Available Scripts
 
