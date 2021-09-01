@@ -8,9 +8,14 @@ Login: taiscunha@gmail.com Senha: 123456789
 
 ## Available Scripts
 
-In the project directory, you can run:
+## Ao fazer um clone do projeto, baixe as dependências do projeto utilizando o comando:
+
+### `npm install`
+
+## Para fazer o projeto funcionar, utilize o comando:
 
 ### `npm start`
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
