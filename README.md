@@ -6,7 +6,7 @@ Nesse projeto fizemos um site de uma escola infantil, utilizando React.JS e inte
 
 ## Para ver e utilizar o site acesse o link: 
 
-https://quizzical-curie-6ab101.netlify.app
+https://resilinha.netlify.app/
 
 ## Para acessar a página Portal do Educador utilize:
 
