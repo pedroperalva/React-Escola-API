@@ -20,6 +20,10 @@ Login: taiscunha@gmail.com Senha: 123456789
 
 ### `npm start`
 
+## Estrutura de página do projeto
+
+### https://github.com/pedroperalva/React-Escola-API/tree/main/img
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
