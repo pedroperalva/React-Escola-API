@@ -16,23 +16,15 @@ class QuemSomos extends Component {
                     <Titulo>Quem Somos</Titulo>
                     <DivMensagem>
                         <Mensagem>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Mi quis hendrerit dolor magna eget est lorem. Nulla aliquet enim tortor at. 
-                        Suscipit adipiscing bibendum est ultricies integer quis auctor. 
-                        Scelerisque fermentum dui faucibus in ornare quam. Pretium nibh ipsum consequat nisl. 
-                        Ultrices in iaculis nunc sed augue lacus viverra vitae. 
-                        Et ligula ullamcorper malesuada proin libero nunc consequat interdum varius. 
-                        Sed cras ornare arcu dui vivamus arcu felis bibendum ut. 
-                        Ultrices mi tempus imperdiet nulla malesuada. Ut aliquam purus sit amet luctus. 
-                        Quam viverra orci sagittis eu volutpat odio facilisis mauris sit.<br></br><br></br>
-                        Quam lacus suspendisse faucibus interdum posuere lorem. 
-                        Consectetur a erat nam at lectus urna duis. 
-                        Viverra suspendisse potenti nullam ac tortor. Cras fermentum odio eu feugiat. 
-                        Enim nulla aliquet porttitor lacus luctus accumsan tortor. 
-                        Pellentesque habitant morbi tristique senectus et. Consequat ac felis donec et odio pellentesque diam. 
-                        Elit pellentesque habitant morbi tristique senectus et. Enim nulla aliquet porttitor lacus. 
-                        Vitae proin sagittis nisl rhoncus mattis. In fermentum et sollicitudin ac orci phasellus egestas tellus.
+                        O resilinha surgiu na combinação de histórias e no encontro de um grupo de
+                         amigos, Pedro Peralva, Sâmela Barbosa, Italo Nascimento e Cristiano Quituxe<br/><br/>
+                        com o propósito de revolucionar e inovar a educação de base. 
+                        Com olhar atento ao rumo que o mundo tem tomado,
+                        e visão para o futuro, estes jovens se uniram para<br/><br/>
+                         dar vida a este que é um projeto inovador, 
+                         sem perder a essência do que é necessário para a melhor educação,<br/><br/>
+                         e aplicando metodologias inovadoras que são o futuro de qualquer nação. 
+                         Assim surgiu o Resilinha, um novo conceito de educar!
                         </Mensagem>
 
                         <Imagem src={img1} />
@@ -160,8 +152,8 @@ const DivMensagem = styled.div`
         'texto'
         'imagem';
     margin-bottom: 200px;
-    @media (max-width: 1000px) {
-        height: 800px;
+    @media (max-width: 450px) {
+        height: 550px;
     }
 `
 const Mensagem = styled.p`
