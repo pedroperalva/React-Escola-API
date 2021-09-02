@@ -23,22 +23,20 @@ class Home extends Component {
             <Cards
               imagem={Certificado}
               subtitle="Ensino de qualidade"
-              p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Integer vitae justo eget magna fermentum iaculis eu non diam."
+              p="Temos aulas dinâmicas, com conteúdo que estimula o intelecto
+               do aluno desde os seus primeiros passos."
             />
             <Cards
               imagem={Foguete}
               subtitle="Evolução constante"
-              p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              p="Evolução dentro da cultura maker e do ensino da ciência e
+               tecnologia desde cedo."
             />
             <Cards
               imagem={Livro}
-              subtitle="Biblioteca aberta"
-              p="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-              Massa massa ultricies mi quis hendrerit dolor magna eget."
+              subtitle="Laboratórios de Ensino"
+              p="Temos laboratórios que estimulam o ensino das crianças, para estimular
+               o desenvolvimento técnico das crianças desde cedo."
             />
           </DivCards>
         </DivContent>

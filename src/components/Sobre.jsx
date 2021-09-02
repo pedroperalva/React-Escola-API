@@ -14,7 +14,10 @@ class Sobre extends Component {
                         Metodologia Inovadora!
                     </SobreNosTitulo>
                     <SobreNos>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugiat dicta voluptatem accusantium assumenda <br /> maxime voluptates, ipsa veniam dolorum esse eius aliquid <br />laborum porro, est cum? Tempore totam facilis odit?
+                        A nossa metodologia acredita que a Educação é um processo que vai além
+                        dos muros da escola e acontece de forma muito mais abrangente do que uma simples transmissão de conhecimento acadêmico. 
+                        Afinal, todo ser humano conta com múltiplas dimensões (intelectual, física, emocional, social e cultural),
+                         e todas elas são desenvolvidas pela nossa metodologia.
                     </SobreNos>
                 </DivSobre>
             </Section>

@@ -10,10 +10,9 @@ class Intro extends Component {
         <Content>
           <Title>Resilinha</Title>
           <P>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/>
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/> 
-          Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.<br/> 
-          Augue neque gravida in fermentum et.
+            Nós somos movidos pelo desafio de transformar vidas por meio da educação.<br/> 
+            A Resilinha nasceu em 2019 com a união entre um grupo de jovens motivados<br/>
+            por levar o ensino de qualidade a crianças e jovens de todo o país
           </P>
           <Button>Matricule-se</Button>
         </Content>
