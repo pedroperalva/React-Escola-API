@@ -12,8 +12,6 @@ https://resilinha.netlify.app/
 
 Login: taiscunha@gmail.com Senha: 123456789
 
-## Available Scripts
-
 ## Ao fazer um clone do projeto, baixe as dependências do projeto utilizando o comando:
 
 ### `npm install`
